@@ -10,43 +10,25 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link
-href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600&display=swap"
-rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
 /* =========================================================
-   COLORS
+   COLOURS
 ========================================================= */
 
 :root {
-
     --bg: #eaf2f5;
-    --bg-soft: #dfeaf0;
-
     --blue: #afc4cf;
     --blue-light: #dce8ed;
     --blue-deep: #688695;
-
     --sand: #dccdbb;
     --sand-light: #eee4d8;
-
     --text: #29424f;
     --muted: #70828b;
-
-    --white:
-        rgba(255,255,255,0.68);
-
-    --white-strong:
-        rgba(255,255,255,0.90);
-
-    --border:
-        rgba(60,90,105,0.12);
-
-    --shadow:
-        0 30px 80px
-        rgba(55,78,90,0.11);
+    --border: rgba(60,90,105,0.12);
+    --shadow: 0 30px 80px rgba(55,78,90,0.11);
 }
 
 
@@ -65,14 +47,8 @@ html {
 }
 
 body {
-
-    font-family:
-        "Baloo 2",
-        sans-serif;
-
-    color:
-        var(--text);
-
+    font-family: "Baloo 2", sans-serif;
+    color: var(--text);
     overflow-x: hidden;
 
     background:
@@ -81,32 +57,26 @@ body {
             rgba(175,196,207,0.62),
             transparent 30%
         ),
-
         radial-gradient(
             circle at 92% 35%,
             rgba(220,205,187,0.50),
             transparent 29%
         ),
-
         radial-gradient(
             circle at 45% 78%,
             rgba(175,196,207,0.32),
             transparent 35%
         ),
-
         var(--bg);
 }
-
 
 a {
     color: inherit;
 }
 
-
 button,
 a {
-    font-family:
-        inherit;
+    font-family: inherit;
 }
 
 
@@ -115,27 +85,17 @@ a {
 ========================================================= */
 
 .background-motion {
-
     position: fixed;
-
     inset: 0;
-
     overflow: hidden;
-
     pointer-events: none;
-
     z-index: -10;
 }
 
-
 .bg-orb {
-
     position: absolute;
-
     border-radius: 50%;
-
     filter: blur(90px);
-
     opacity: 0.22;
 
     animation:
@@ -145,95 +105,64 @@ a {
         infinite alternate;
 }
 
-
 .orb-one {
-
     width: 500px;
     height: 500px;
-
     left: -230px;
     top: 10%;
-
-    background:
-        var(--blue);
+    background: var(--blue);
 }
-
 
 .orb-two {
-
     width: 470px;
     height: 470px;
-
     right: -220px;
     top: 40%;
-
-    background:
-        var(--sand);
-
-    animation-delay:
-        -6s;
+    background: var(--sand);
+    animation-delay: -6s;
 }
-
 
 .orb-three {
-
     width: 400px;
     height: 400px;
-
     left: 35%;
     bottom: -250px;
-
-    background:
-        var(--blue-light);
-
-    animation-delay:
-        -10s;
+    background: var(--blue-light);
+    animation-delay: -10s;
 }
-
 
 @keyframes floatOrb {
 
     from {
-
         transform:
             translate3d(0,0,0)
             scale(1);
     }
 
     to {
-
         transform:
             translate3d(45px,-40px,0)
             scale(1.12);
     }
-
 }
 
 
 /* =========================================================
-   NAVIGATION
+   NAV
 ========================================================= */
 
 nav {
-
     position: fixed;
-
     top: 0;
     left: 0;
 
     width: 100%;
-
     height: 78px;
 
-    padding:
-        0
-        4%;
+    padding: 0 4%;
 
     display: flex;
-
-    justify-content:
-        space-between;
-
+    justify-content: space-between;
     align-items: center;
 
     z-index: 1000;
@@ -241,25 +170,19 @@ nav {
     background:
         rgba(234,242,245,0.70);
 
-    backdrop-filter:
-        blur(24px);
-
-    -webkit-backdrop-filter:
-        blur(24px);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
 
     border-bottom:
         1px solid
         rgba(60,90,105,0.07);
 }
 
-
 .logo {
-
     width: 48px;
     height: 48px;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
@@ -273,24 +196,18 @@ nav {
         );
 
     font-size: 22px;
-
     font-weight: 800;
-
-    color:
-        var(--text);
-
-    transition:
-        transform 0.35s ease,
-        border-radius 0.35s ease;
 
     box-shadow:
         0 12px 30px
         rgba(55,78,90,0.10);
+
+    transition:
+        transform 0.35s ease,
+        border-radius 0.35s ease;
 }
 
-
 .logo:hover {
-
     transform:
         rotate(-7deg)
         scale(1.08);
@@ -298,34 +215,22 @@ nav {
     border-radius: 50%;
 }
 
-
 .nav-links {
-
     display: flex;
-
     gap: 32px;
-
     list-style: none;
 }
 
-
 .nav-links a {
+    position: relative;
 
     text-decoration: none;
 
     font-size: 14px;
-
     font-weight: 600;
-
-    color:
-        var(--text);
-
-    position: relative;
 }
 
-
 .nav-links a::after {
-
     content: "";
 
     position: absolute;
@@ -345,9 +250,7 @@ nav {
         width 0.3s ease;
 }
 
-
 .nav-links a:hover::after {
-
     width: 100%;
 }
 
@@ -357,13 +260,10 @@ nav {
 ========================================================= */
 
 .hero {
-
     min-height: 100vh;
 
     display: flex;
-
     flex-direction: column;
-
     justify-content: center;
 
     padding:
@@ -372,21 +272,14 @@ nav {
         80px;
 }
 
-
-.hero-top {
-
+.hero-inner {
     width: 100%;
-
     max-width: 1500px;
-
     margin: auto;
 }
 
-
 .hero-label {
-
     font-size: 14px;
-
     font-weight: 700;
 
     letter-spacing: 4px;
@@ -402,10 +295,8 @@ nav {
         both;
 }
 
-
 .hero h1 {
-
-    max-width: 1250px;
+    max-width: 1300px;
 
     font-size:
         clamp(
@@ -414,15 +305,11 @@ nav {
             205px
         );
 
-    line-height: 0.76;
+    line-height: 0.77;
 
-    letter-spacing:
-        -9px;
+    letter-spacing: -9px;
 
     font-weight: 800;
-
-    color:
-        var(--text);
 
     animation:
         heroIn
@@ -430,17 +317,13 @@ nav {
         0.08s both;
 }
 
-
 .hero-bottom {
-
     margin-top: 60px;
 
     display: flex;
 
+    justify-content: space-between;
     align-items: flex-end;
-
-    justify-content:
-        space-between;
 
     gap: 40px;
 
@@ -450,9 +333,7 @@ nav {
         0.18s both;
 }
 
-
 .hero-description {
-
     max-width: 570px;
 
     font-size:
@@ -468,29 +349,16 @@ nav {
         var(--muted);
 }
 
-
 .hero-actions {
-
     display: flex;
-
     gap: 12px;
-
     flex-wrap: wrap;
-
-    justify-content: flex-end;
 }
 
-
 .button {
-
-    position: relative;
-
-    overflow: hidden;
-
     display: inline-flex;
 
     align-items: center;
-
     justify-content: center;
 
     gap: 9px;
@@ -504,7 +372,6 @@ nav {
     text-decoration: none;
 
     font-size: 15px;
-
     font-weight: 700;
 
     transition:
@@ -513,9 +380,7 @@ nav {
         background 0.3s ease;
 }
 
-
 .button-primary {
-
     background:
         var(--blue-deep);
 
@@ -526,45 +391,32 @@ nav {
         rgba(55,78,90,0.18);
 }
 
-
 .button-secondary {
-
     border:
         1.5px solid
         var(--blue-deep);
 
     background:
         rgba(255,255,255,0.45);
-
-    color:
-        var(--text);
 }
 
-
 .button:hover {
-
     transform:
         translateY(-4px);
 }
 
-
 .button-primary:hover {
-
     box-shadow:
         0 22px 45px
         rgba(55,78,90,0.22);
 }
 
-
 .button-secondary:hover {
-
     background:
         rgba(255,255,255,0.82);
 }
 
-
 .arrow {
-
     display: inline-block;
 
     animation:
@@ -573,29 +425,23 @@ nav {
         infinite;
 }
 
-
 @keyframes arrowBounce {
 
     0%,
     100% {
-
         transform:
             translateY(0);
     }
 
     50% {
-
         transform:
             translateY(4px);
     }
-
 }
-
 
 @keyframes heroIn {
 
     from {
-
         opacity: 0;
 
         transform:
@@ -603,30 +449,24 @@ nav {
     }
 
     to {
-
         opacity: 1;
 
         transform:
             translateY(0);
     }
-
 }
 
 
 /* =========================================================
-   GENERAL
+   GENERAL SECTION STYLES
 ========================================================= */
 
 section {
-
     position: relative;
-
     width: 100%;
 }
 
-
 .section-inner {
-
     max-width: 1500px;
 
     margin: auto;
@@ -636,13 +476,10 @@ section {
         5%;
 }
 
-
 .eyebrow {
-
     margin-bottom: 10px;
 
     font-size: 13px;
-
     font-weight: 700;
 
     letter-spacing: 3px;
@@ -651,8 +488,8 @@ section {
         var(--blue-deep);
 }
 
-
 .section-title {
+    max-width: 1100px;
 
     font-size:
         clamp(
@@ -666,13 +503,9 @@ section {
     letter-spacing: -5px;
 
     font-weight: 800;
-
-    max-width: 1000px;
 }
 
-
 .section-intro {
-
     max-width: 620px;
 
     margin-top: 25px;
@@ -690,17 +523,14 @@ section {
 
 
 /* =========================================================
-   FEATURED REEL
+   REEL
 ========================================================= */
 
 .reel-section {
-
     padding-top: 20px;
 }
 
-
 .reel-shell {
-
     margin-top: 60px;
 
     padding: 9px;
@@ -724,9 +554,7 @@ section {
         box-shadow 0.45s ease;
 }
 
-
 .reel-shell:hover {
-
     transform:
         translateY(-7px);
 
@@ -735,43 +563,34 @@ section {
         rgba(55,78,90,0.20);
 }
 
-
 .reel-shell.highlight {
-
     animation:
         reelGlow
         1.2s ease;
 }
 
-
 @keyframes reelGlow {
 
     0% {
-
         box-shadow:
             0 35px 90px
             rgba(55,78,90,0.15);
     }
 
     45% {
-
         box-shadow:
             0 0 90px
             rgba(104,134,149,0.50);
     }
 
     100% {
-
         box-shadow:
             0 35px 90px
             rgba(55,78,90,0.15);
     }
-
 }
 
-
 .reel-shell video {
-
     display: block;
 
     width: 100%;
@@ -782,13 +601,10 @@ section {
         #16252c;
 }
 
-
 .frame-controls {
-
     display: flex;
 
     justify-content: center;
-
     align-items: center;
 
     gap: 10px;
@@ -798,9 +614,7 @@ section {
     margin-top: 20px;
 }
 
-
 .frame-button {
-
     min-height: 44px;
 
     padding:
@@ -828,9 +642,7 @@ section {
         background 0.2s ease;
 }
 
-
 .frame-button:hover {
-
     transform:
         translateY(-2px);
 
@@ -838,9 +650,7 @@ section {
         rgba(255,255,255,0.86);
 }
 
-
 .frame-note {
-
     color:
         var(--muted);
 
@@ -849,17 +659,14 @@ section {
 
 
 /* =========================================================
-   PROJECTS / BIG SHOWCASE
+   SELECTED WORK
 ========================================================= */
 
 .projects {
-
     padding-bottom: 100px;
 }
 
-
 .projects-header {
-
     max-width: 1500px;
 
     margin: auto;
@@ -867,12 +674,10 @@ section {
     padding:
         150px
         5%
-        60px;
+        65px;
 }
 
-
 .project {
-
     width:
         calc(100% - 6%);
 
@@ -886,9 +691,7 @@ section {
     position: relative;
 }
 
-
 .project-screen {
-
     position: relative;
 
     width: 100%;
@@ -906,7 +709,6 @@ section {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     background:
@@ -931,10 +733,8 @@ section {
         box-shadow 0.6s ease;
 }
 
-
-.project:nth-child(even)
+.project:nth-of-type(even)
 .project-screen {
-
     background:
         linear-gradient(
             145deg,
@@ -943,9 +743,7 @@ section {
         );
 }
 
-
 .project-screen:hover {
-
     transform:
         scale(0.992);
 
@@ -956,11 +754,7 @@ section {
         rgba(55,78,90,0.17);
 }
 
-
-/* PLACEHOLDER BEFORE VIDEOS */
-
 .project-placeholder {
-
     text-align: center;
 
     padding: 40px;
@@ -969,17 +763,13 @@ section {
         transform 0.5s ease;
 }
 
-
 .project-screen:hover
 .project-placeholder {
-
     transform:
         scale(1.04);
 }
 
-
 .project-number {
-
     font-size:
         clamp(
             100px,
@@ -999,22 +789,7 @@ section {
     user-select: none;
 }
 
-
-.project-placeholder p {
-
-    margin-top: 35px;
-
-    font-size: 16px;
-
-    color:
-        rgba(41,66,79,0.62);
-
-    font-weight: 600;
-}
-
-
 .project-info {
-
     padding:
         28px
         10px
@@ -1025,14 +800,13 @@ section {
     justify-content:
         space-between;
 
-    align-items: flex-start;
+    align-items:
+        flex-start;
 
     gap: 40px;
 }
 
-
 .project-info-left h3 {
-
     font-size:
         clamp(
             32px,
@@ -1047,9 +821,7 @@ section {
     font-weight: 800;
 }
 
-
 .project-type {
-
     margin-top: 6px;
 
     color:
@@ -1058,28 +830,20 @@ section {
     font-size: 16px;
 }
 
-
 .project-index {
-
     color:
         var(--blue-deep);
 
     font-size: 16px;
-
     font-weight: 700;
 
     padding-top: 8px;
 }
 
 
-/* VIDEO STYLE FOR LATER
-
-   When we add videos, they will use this
-   automatically.
-*/
+/* This will be used when we add your videos */
 
 .project-video {
-
     position: absolute;
 
     inset: 0;
@@ -1094,224 +858,191 @@ section {
 
 
 /* =========================================================
-   CREDITS
+   PRODUCTION CREDITS
 ========================================================= */
 
 .credits-section {
-
     padding:
-        30px
-        0
-        100px;
+        80px
+        5%
+        150px;
 }
 
-
-.credits-panel {
-
+.credits-inner {
     max-width: 1500px;
 
     margin: auto;
+}
 
-    padding:
-        110px
-        5%;
+.credits-header {
+    margin-bottom: 55px;
+}
 
-    border-radius: 50px;
+.credits-header
+.section-title {
+    font-size:
+        clamp(
+            50px,
+            7vw,
+            90px
+        );
+}
+
+.production-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 24px;
+}
+
+.production-card {
+    position: relative;
+
+    min-height: 290px;
+
+    padding: 32px;
+
+    border-radius: 36px;
+
+    overflow: hidden;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content:
+        space-between;
 
     background:
-        rgba(255,255,255,0.37);
+        rgba(255,255,255,0.52);
 
     border:
         1px solid
-        rgba(255,255,255,0.55);
+        rgba(255,255,255,0.70);
 
     box-shadow:
-        0 30px 80px
-        rgba(55,78,90,0.08);
+        0 24px 65px
+        rgba(55,78,90,0.09);
+
+    transition:
+        transform 0.4s
+        cubic-bezier(.2,.8,.2,1),
+        box-shadow 0.4s ease,
+        background 0.4s ease;
 }
 
+.production-card:nth-child(2),
+.production-card:nth-child(5) {
+    background:
+        rgba(220,205,187,0.45);
+}
 
-.credits-heading {
+.production-card:nth-child(3),
+.production-card:nth-child(6) {
+    background:
+        rgba(175,196,207,0.42);
+}
+
+.production-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    top: -95px;
+    right: -70px;
+
+    background:
+        rgba(255,255,255,0.34);
+
+    transition:
+        transform 0.5s ease;
+}
+
+.production-card:hover {
+    transform:
+        translateY(-9px);
+
+    background:
+        rgba(255,255,255,0.76);
+
+    box-shadow:
+        0 35px 80px
+        rgba(55,78,90,0.14);
+}
+
+.production-card:hover::before {
+    transform:
+        scale(1.4);
+}
+
+.production-top {
+    position: relative;
 
     display: flex;
 
     justify-content:
         space-between;
 
-    align-items: flex-end;
-
-    gap: 40px;
-
-    margin-bottom: 55px;
-}
-
-
-.credits-heading
-.section-title {
-
-    font-size:
-        clamp(
-            48px,
-            6vw,
-            85px
-        );
-}
-
-
-.credits-copy {
-
-    max-width: 390px;
-
-    color:
-        var(--muted);
-
-    font-size: 17px;
-}
-
-
-.credits-list {
-
-    border-top:
-        1px solid
-        var(--border);
-}
-
-
-.credit-row {
-
-    position: relative;
-
-    display: grid;
-
-    grid-template-columns:
-        80px
-        1fr
-        auto;
-
     align-items: center;
-
-    gap: 20px;
-
-    padding:
-        28px
-        10px;
-
-    border-bottom:
-        1px solid
-        var(--border);
-
-    transition:
-        padding 0.3s ease,
-        background 0.3s ease;
 }
 
-
-.credit-row:hover {
-
-    padding-left: 20px;
-
-    background:
-        rgba(255,255,255,0.34);
-}
-
-
-.credit-num {
-
+.production-number {
     color:
         var(--blue-deep);
 
-    font-size: 14px;
+    font-size: 13px;
+
+    letter-spacing: 2px;
 
     font-weight: 700;
 }
 
+.production-year {
+    color:
+        var(--muted);
 
-.credit-name {
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+.production-bottom {
+    position: relative;
+}
+
+.production-card h3 {
+    max-width: 340px;
 
     font-size:
         clamp(
-            21px,
-            2.5vw,
+            24px,
+            2.2vw,
             34px
         );
 
-    line-height: 1.1;
+    line-height: 1.08;
 
-    font-weight: 700;
+    letter-spacing: -1px;
+
+    font-weight: 800;
 }
 
-
-.credit-role {
+.production-role {
+    margin-top: 12px;
 
     color:
         var(--muted);
 
     font-size: 14px;
 
-    text-align: right;
-}
-
-
-/* =========================================================
-   ABOUT
-========================================================= */
-
-.about-section
-.section-inner {
-
-    padding-top: 160px;
-
-    padding-bottom: 160px;
-}
-
-
-.about-layout {
-
-    margin-top: 55px;
-
-    display: grid;
-
-    grid-template-columns:
-        1fr
-        1.1fr;
-
-    gap:
-        clamp(
-            50px,
-            10vw,
-            160px
-        );
-
-    align-items: start;
-}
-
-
-.about-small {
-
-    color:
-        var(--blue-deep);
-
-    font-size: 15px;
-
-    font-weight: 700;
-}
-
-
-.about-copy {
-
-    font-size:
-        clamp(
-            22px,
-            3vw,
-            38px
-        );
-
-    line-height: 1.35;
-
-    letter-spacing: -1px;
-
-    color:
-        var(--text);
+    font-weight: 600;
 }
 
 
@@ -1320,17 +1051,14 @@ section {
 ========================================================= */
 
 .contact-section {
-
-    min-height: 75vh;
+    min-height: 72vh;
 
     display: flex;
 
     align-items: center;
 }
 
-
 .contact-inner {
-
     width: 100%;
 
     max-width: 1500px;
@@ -1344,9 +1072,7 @@ section {
     text-align: center;
 }
 
-
 .contact-title {
-
     font-size:
         clamp(
             65px,
@@ -1361,9 +1087,7 @@ section {
     font-weight: 800;
 }
 
-
 .contact-copy {
-
     max-width: 530px;
 
     margin:
@@ -1377,9 +1101,7 @@ section {
     font-size: 19px;
 }
 
-
 .contact-actions {
-
     display: flex;
 
     justify-content: center;
@@ -1395,7 +1117,6 @@ section {
 ========================================================= */
 
 footer {
-
     padding:
         30px
         5%;
@@ -1421,11 +1142,10 @@ footer {
 
 
 /* =========================================================
-   SCROLL REVEALS
+   SCROLL REVEAL
 ========================================================= */
 
 .reveal {
-
     opacity: 0;
 
     transform:
@@ -1437,83 +1157,22 @@ footer {
         cubic-bezier(.2,.8,.2,1);
 }
 
-
 .reveal.visible {
-
     opacity: 1;
 
     transform:
         translateY(0);
 }
 
-
 .project.reveal {
-
     transform:
         translateY(70px)
         scale(0.985);
 }
 
-
 .project.reveal.visible {
-
     transform:
         translateY(0)
-        scale(1);
-}
-
-
-/* =========================================================
-   CURSOR / TILT DETAILS
-========================================================= */
-
-.project-screen::after {
-
-    content: "VIEW";
-
-    position: absolute;
-
-    top: 28px;
-    right: 28px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    width: 70px;
-    height: 70px;
-
-    border-radius: 50%;
-
-    background:
-        rgba(255,255,255,0.75);
-
-    color:
-        var(--text);
-
-    font-size: 11px;
-
-    letter-spacing: 1px;
-
-    font-weight: 800;
-
-    opacity: 0;
-
-    transform:
-        scale(0.7);
-
-    transition:
-        opacity 0.3s ease,
-        transform 0.3s ease;
-}
-
-
-.project-screen:hover::after {
-
-    opacity: 1;
-
-    transform:
         scale(1);
 }
 
@@ -1526,51 +1185,28 @@ footer {
 (max-width: 950px) {
 
     .hero-bottom {
+        align-items:
+            flex-start;
 
-        align-items: flex-start;
-
-        flex-direction: column;
+        flex-direction:
+            column;
     }
 
-
-    .hero-actions {
-
-        justify-content: flex-start;
-    }
-
-
-    .credits-heading {
-
-        flex-direction: column;
-
-        align-items: flex-start;
-    }
-
-
-    .about-layout {
-
+    .production-grid {
         grid-template-columns:
-            1fr;
-
-        gap: 25px;
+            repeat(2,1fr);
     }
-
 
     .project {
-
         width:
             calc(100% - 40px);
     }
 
-
     .project-screen {
-
-        min-height:
-            65vw;
+        min-height: 65vw;
 
         border-radius: 32px;
     }
-
 }
 
 
@@ -1582,7 +1218,6 @@ footer {
 (max-width: 700px) {
 
     nav {
-
         height: 68px;
 
         padding:
@@ -1590,9 +1225,7 @@ footer {
             20px;
     }
 
-
     .logo {
-
         width: 42px;
         height: 42px;
 
@@ -1601,21 +1234,15 @@ footer {
         font-size: 19px;
     }
 
-
     .nav-links {
-
-        gap: 13px;
+        gap: 14px;
     }
 
-
     .nav-links a {
-
         font-size: 11px;
     }
 
-
     .hero {
-
         padding:
             115px
             20px
@@ -1624,9 +1251,7 @@ footer {
         min-height: 92vh;
     }
 
-
     .hero h1 {
-
         font-size:
             clamp(
                 70px,
@@ -1637,48 +1262,31 @@ footer {
         letter-spacing: -5px;
     }
 
-
     .hero-bottom {
-
         margin-top: 42px;
     }
-
 
     .section-inner,
     .projects-header,
     .contact-inner {
-
         padding-left: 20px;
-
         padding-right: 20px;
     }
 
-
     .project {
-
         width:
             calc(100% - 28px);
 
         margin-bottom: 75px;
     }
 
-
     .project-screen {
-
         min-height: 68vw;
 
         border-radius: 26px;
     }
 
-
-    .project-number {
-
-        letter-spacing: -6px;
-    }
-
-
     .project-info {
-
         flex-direction: column;
 
         gap: 8px;
@@ -1686,58 +1294,32 @@ footer {
         padding-top: 20px;
     }
 
-
     .project-index {
-
         order: -1;
     }
 
-
     .credits-section {
-
         padding:
-            0
+            70px
             14px
-            80px;
+            100px;
     }
 
-
-    .credits-panel {
-
-        padding:
-            75px
-            22px;
-
-        border-radius: 32px;
+    .production-grid {
+        grid-template-columns: 1fr;
     }
 
+    .production-card {
+        min-height: 240px;
 
-    .credit-row {
-
-        grid-template-columns:
-            45px
-            1fr;
-
-        gap: 12px;
+        border-radius: 30px;
     }
-
-
-    .credit-role {
-
-        grid-column:
-            2;
-
-        text-align: left;
-    }
-
 
     footer {
-
         flex-direction: column;
 
         text-align: center;
     }
-
 }
 
 
@@ -1748,32 +1330,19 @@ footer {
 @media
 (max-width: 520px) {
 
-    .nav-links li:nth-child(3),
-    .nav-links li:nth-child(4) {
-
+    .nav-links li:nth-child(3) {
         display: none;
     }
 
-
     .hero h1 {
-
         font-size: 70px;
 
         letter-spacing: -4px;
     }
 
-
     .section-title {
-
         letter-spacing: -3px;
     }
-
-
-    .project-screen::after {
-
-        display: none;
-    }
-
 }
 
 
@@ -1787,7 +1356,6 @@ footer {
     *,
     *::before,
     *::after {
-
         animation-duration:
             0.01ms !important;
 
@@ -1800,7 +1368,6 @@ footer {
         scroll-behavior:
             auto !important;
     }
-
 }
 
 </style>
@@ -1810,9 +1377,7 @@ footer {
 <body>
 
 
-<!-- =========================================================
-     MOVING BACKGROUND
-========================================================= -->
+<!-- BACKGROUND -->
 
 <div class="background-motion">
 
@@ -1826,16 +1391,13 @@ footer {
 
 
 
-<!-- =========================================================
-     NAV
-========================================================= -->
+<!-- NAVIGATION -->
 
 <nav>
 
     <div class="logo">
         JB
     </div>
-
 
     <ul class="nav-links">
 
@@ -1858,12 +1420,6 @@ footer {
         </li>
 
         <li>
-            <a href="#about">
-                About
-            </a>
-        </li>
-
-        <li>
             <a href="#contact">
                 Contact
             </a>
@@ -1875,18 +1431,15 @@ footer {
 
 
 
-<!-- =========================================================
-     HERO
-========================================================= -->
+<!-- HERO -->
 
 <header class="hero">
 
-    <div class="hero-top">
+    <div class="hero-inner">
 
         <p class="hero-label">
             3D CHARACTER ANIMATOR
         </p>
-
 
         <h1 id="heroTitle">
 
@@ -1895,7 +1448,6 @@ footer {
             Breva
 
         </h1>
-
 
         <div class="hero-bottom">
 
@@ -1907,7 +1459,6 @@ footer {
                 and visual storytelling.
 
             </p>
-
 
             <div class="hero-actions">
 
@@ -1923,7 +1474,6 @@ footer {
                     </span>
 
                 </a>
-
 
                 <a
                 href="#work"
@@ -1943,30 +1493,21 @@ footer {
 
 
 
-<!-- =========================================================
-     FEATURED REEL
-========================================================= -->
+<!-- FEATURED REEL -->
 
 <section
 id="reel"
 class="reel-section">
 
-
     <div class="section-inner reveal">
-
 
         <div class="eyebrow">
             01 — DEMO REEL
         </div>
 
-
         <h2 class="section-title">
-
-            The reel
-            comes first.
-
+            Featured Reel
         </h2>
-
 
         <p class="section-intro">
 
@@ -1975,11 +1516,9 @@ class="reel-section">
 
         </p>
 
-
         <div
         class="reel-shell"
         id="reelShell">
-
 
             <video
             id="mainReel"
@@ -1993,12 +1532,9 @@ class="reel-section">
 
             </video>
 
-
         </div>
 
-
         <div class="frame-controls">
-
 
             <button
             class="frame-button"
@@ -2008,7 +1544,6 @@ class="reel-section">
 
             </button>
 
-
             <button
             class="frame-button"
             onclick="nextFrame()">
@@ -2017,67 +1552,49 @@ class="reel-section">
 
             </button>
 
-
             <span class="frame-note">
-
                 24 FPS
-
             </span>
-
 
         </div>
 
-
     </div>
-
 
 </section>
 
 
 
-<!-- =========================================================
-     SELECTED WORK
-========================================================= -->
+<!-- SELECTED WORK -->
 
 <section
 id="work"
 class="projects">
 
-
     <div class="projects-header reveal">
-
 
         <div class="eyebrow">
             02 — SELECTED WORK
         </div>
 
-
         <h2 class="section-title">
-
-            Bigger screens.
-            <br>
-            Better viewing.
-
+            Selected
+            Animation
         </h2>
-
 
         <p class="section-intro">
 
-            Each project gets its own space.
-            We'll replace these panels with your
-            actual animation videos next.
+            Character acting,
+            action and body mechanics.
 
         </p>
-
 
     </div>
 
 
 
-    <!-- PROJECT 01 -->
+    <!-- 01 -->
 
     <article class="project reveal">
-
 
         <div class="project-screen">
 
@@ -2087,14 +1604,9 @@ class="projects">
                     01
                 </div>
 
-                <p>
-                    Animation video goes here
-                </p>
-
             </div>
 
         </div>
-
 
         <div class="project-info">
 
@@ -2110,22 +1622,19 @@ class="projects">
 
             </div>
 
-
             <div class="project-index">
                 01 / 07
             </div>
 
         </div>
 
-
     </article>
 
 
 
-    <!-- PROJECT 02 -->
+    <!-- 02 -->
 
     <article class="project reveal">
-
 
         <div class="project-screen">
 
@@ -2135,14 +1644,9 @@ class="projects">
                     02
                 </div>
 
-                <p>
-                    Animation video goes here
-                </p>
-
             </div>
 
         </div>
-
 
         <div class="project-info">
 
@@ -2158,22 +1662,19 @@ class="projects">
 
             </div>
 
-
             <div class="project-index">
                 02 / 07
             </div>
 
         </div>
 
-
     </article>
 
 
 
-    <!-- PROJECT 03 -->
+    <!-- 03 -->
 
     <article class="project reveal">
-
 
         <div class="project-screen">
 
@@ -2183,14 +1684,9 @@ class="projects">
                     03
                 </div>
 
-                <p>
-                    Animation video goes here
-                </p>
-
             </div>
 
         </div>
-
 
         <div class="project-info">
 
@@ -2206,22 +1702,19 @@ class="projects">
 
             </div>
 
-
             <div class="project-index">
                 03 / 07
             </div>
 
         </div>
 
-
     </article>
 
 
 
-    <!-- PROJECT 04 -->
+    <!-- 04 -->
 
     <article class="project reveal">
-
 
         <div class="project-screen">
 
@@ -2231,14 +1724,9 @@ class="projects">
                     04
                 </div>
 
-                <p>
-                    Animation video goes here
-                </p>
-
             </div>
 
         </div>
-
 
         <div class="project-info">
 
@@ -2254,22 +1742,19 @@ class="projects">
 
             </div>
 
-
             <div class="project-index">
                 04 / 07
             </div>
 
         </div>
 
-
     </article>
 
 
 
-    <!-- PROJECT 05 -->
+    <!-- 05 -->
 
     <article class="project reveal">
-
 
         <div class="project-screen">
 
@@ -2279,14 +1764,9 @@ class="projects">
                     05
                 </div>
 
-                <p>
-                    Animation video goes here
-                </p>
-
             </div>
 
         </div>
-
 
         <div class="project-info">
 
@@ -2302,22 +1782,19 @@ class="projects">
 
             </div>
 
-
             <div class="project-index">
                 05 / 07
             </div>
 
         </div>
 
-
     </article>
 
 
 
-    <!-- PROJECT 06 -->
+    <!-- 06 -->
 
     <article class="project reveal">
-
 
         <div class="project-screen">
 
@@ -2327,14 +1804,9 @@ class="projects">
                     06
                 </div>
 
-                <p>
-                    Animation video goes here
-                </p>
-
             </div>
 
         </div>
-
 
         <div class="project-info">
 
@@ -2350,22 +1822,19 @@ class="projects">
 
             </div>
 
-
             <div class="project-index">
                 06 / 07
             </div>
 
         </div>
 
-
     </article>
 
 
 
-    <!-- PROJECT 07 -->
+    <!-- 07 -->
 
     <article class="project reveal">
-
 
         <div class="project-screen">
 
@@ -2375,14 +1844,9 @@ class="projects">
                     07
                 </div>
 
-                <p>
-                    Animation video goes here
-                </p>
-
             </div>
 
         </div>
-
 
         <div class="project-info">
 
@@ -2398,302 +1862,248 @@ class="projects">
 
             </div>
 
-
             <div class="project-index">
                 07 / 07
             </div>
 
         </div>
 
-
     </article>
-
 
 </section>
 
 
 
-<!-- =========================================================
-     PRODUCTION CREDITS
-========================================================= -->
+<!-- PRODUCTION CREDITS -->
 
 <section
 id="credits"
 class="credits-section">
 
+    <div class="credits-inner reveal">
 
-    <div class="credits-panel reveal">
+        <div class="credits-header">
 
-
-        <div class="credits-heading">
-
-
-            <div>
-
-                <div class="eyebrow">
-                    03 — EXPERIENCE
-                </div>
-
-
-                <h2 class="section-title">
-                    Production
-                    Credits
-                </h2>
-
+            <div class="eyebrow">
+                03 — PRODUCTION CREDITS
             </div>
 
+            <h2 class="section-title">
+                Production
+                Credits
+            </h2>
 
-            <p class="credits-copy">
+            <p class="section-intro">
 
-                Selected animated productions
-                I've had the opportunity to contribute to
+                Selected productions I've worked on
                 as a 3D character animator.
 
             </p>
 
-
         </div>
 
 
+        <div class="production-grid">
 
-        <div class="credits-list">
 
+            <div class="production-card">
 
-            <div class="credit-row">
+                <div class="production-top">
 
-                <div class="credit-num">
-                    01
-                </div>
-
-                <div class="credit-name">
-
-                    LEGO Star Wars:
-                    Rebuild the Galaxy —
-                    Pieces of the Past
+                    <span class="production-number">
+                        01
+                    </span>
 
                 </div>
 
-                <div class="credit-role">
-                    3D Character Animation
-                </div>
+                <div class="production-bottom">
 
-            </div>
+                    <h3>
+                        LEGO Star Wars:
+                        Rebuild the Galaxy —
+                        Pieces of the Past
+                    </h3>
 
+                    <div class="production-role">
+                        3D Character Animation
+                    </div>
 
-
-            <div class="credit-row">
-
-                <div class="credit-num">
-                    02
-                </div>
-
-                <div class="credit-name">
-
-                    LEGO Star Wars:
-                    The Mandalorian
-
-                </div>
-
-                <div class="credit-role">
-                    3D Character Animation
                 </div>
 
             </div>
 
 
 
-            <div class="credit-row">
+            <div class="production-card">
 
-                <div class="credit-num">
-                    03
-                </div>
+                <div class="production-top">
 
-                <div class="credit-name">
-
-                    LEGO Marvel:
-                    Strange Tails
+                    <span class="production-number">
+                        02
+                    </span>
 
                 </div>
 
-                <div class="credit-role">
-                    3D Character Animation
-                </div>
+                <div class="production-bottom">
 
-            </div>
+                    <h3>
+                        LEGO Star Wars:
+                        The Mandalorian
+                    </h3>
 
+                    <div class="production-role">
+                        3D Character Animation
+                    </div>
 
-
-            <div class="credit-row">
-
-                <div class="credit-num">
-                    04
-                </div>
-
-                <div class="credit-name">
-
-                    Barbie Mermaid Power
-
-                </div>
-
-                <div class="credit-role">
-                    3D Character Animation
                 </div>
 
             </div>
 
 
 
-            <div class="credit-row">
+            <div class="production-card">
 
-                <div class="credit-num">
-                    05
-                </div>
+                <div class="production-top">
 
-                <div class="credit-name">
-
-                    Barbie:
-                    Skipper and the Big
-                    Babysitting Adventure
+                    <span class="production-number">
+                        03
+                    </span>
 
                 </div>
 
-                <div class="credit-role">
-                    3D Character Animation
+                <div class="production-bottom">
+
+                    <h3>
+                        LEGO Marvel:
+                        Strange Tails
+                    </h3>
+
+                    <div class="production-role">
+                        3D Character Animation
+                    </div>
+
                 </div>
 
             </div>
 
 
 
-            <div class="credit-row">
+            <div class="production-card">
 
-                <div class="credit-num">
-                    06
-                </div>
+                <div class="production-top">
 
-                <div class="credit-name">
-
-                    Barbie:
-                    Epic Road Trip
+                    <span class="production-number">
+                        04
+                    </span>
 
                 </div>
 
-                <div class="credit-role">
-                    3D Character Animation
+                <div class="production-bottom">
+
+                    <h3>
+                        Barbie Mermaid Power
+                    </h3>
+
+                    <div class="production-role">
+                        3D Character Animation
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="production-card">
+
+                <div class="production-top">
+
+                    <span class="production-number">
+                        05
+                    </span>
+
+                </div>
+
+                <div class="production-bottom">
+
+                    <h3>
+                        Barbie:
+                        Skipper and the Big
+                        Babysitting Adventure
+                    </h3>
+
+                    <div class="production-role">
+                        3D Character Animation
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="production-card">
+
+                <div class="production-top">
+
+                    <span class="production-number">
+                        06
+                    </span>
+
+                </div>
+
+                <div class="production-bottom">
+
+                    <h3>
+                        Barbie:
+                        Epic Road Trip
+                    </h3>
+
+                    <div class="production-role">
+                        3D Character Animation
+                    </div>
+
                 </div>
 
             </div>
 
 
         </div>
-
 
     </div>
-
 
 </section>
 
 
 
-<!-- =========================================================
-     ABOUT
-========================================================= -->
-
-<section
-id="about"
-class="about-section">
-
-
-    <div class="section-inner reveal">
-
-
-        <div class="eyebrow">
-            04 — ABOUT
-        </div>
-
-
-        <h2 class="section-title">
-            Character.
-            <br>
-            Movement.
-            <br>
-            Story.
-        </h2>
-
-
-        <div class="about-layout">
-
-
-            <div class="about-small">
-
-                3D CHARACTER ANIMATOR
-
-            </div>
-
-
-            <div class="about-copy">
-
-                I'm a 3D character animator focused on
-                expressive performances, dynamic action,
-                believable movement and clear visual
-                storytelling.
-
-                <br><br>
-
-                My work spans character acting,
-                action animation, body mechanics
-                and animated television and
-                streaming productions.
-
-            </div>
-
-
-        </div>
-
-
-    </div>
-
-
-</section>
-
-
-
-<!-- =========================================================
-     CONTACT
-========================================================= -->
+<!-- CONTACT -->
 
 <section
 id="contact"
 class="contact-section">
 
-
     <div class="contact-inner reveal">
 
-
         <div class="eyebrow">
-            05 — GET IN TOUCH
+            04 — CONTACT
         </div>
-
 
         <h2 class="contact-title">
 
-            Let's make
+            Let's create
             <br>
-            something move.
+            something.
 
         </h2>
 
-
         <p class="contact-copy">
 
-            Available for animation opportunities,
-            collaborations and freelance work.
+            For animation opportunities,
+            freelance work or to get in touch.
 
         </p>
 
-
         <div class="contact-actions">
-
 
             <a
             href="mailto:Justinbreva2@gmail.com"
@@ -2702,7 +2112,6 @@ class="contact-section">
                 Email Me
 
             </a>
-
 
             <a
             href="https://www.linkedin.com/in/justin-breva-064411197/"
@@ -2714,20 +2123,15 @@ class="contact-section">
 
             </a>
 
-
         </div>
 
-
     </div>
-
 
 </section>
 
 
 
-<!-- =========================================================
-     FOOTER
-========================================================= -->
+<!-- FOOTER -->
 
 <footer>
 
@@ -2736,7 +2140,7 @@ class="contact-section">
     </span>
 
     <span>
-        3D Character Animator
+        3D Character Animator · All Rights Reserved
     </span>
 
 </footer>
@@ -2744,6 +2148,7 @@ class="contact-section">
 
 
 <script>
+
 
 /* =========================================================
    FRAME CONTROLS
@@ -2765,15 +2170,10 @@ function nextFrame() {
 
     mainReel.currentTime =
         Math.min(
-
-            mainReel.duration ||
-            Infinity,
-
+            mainReel.duration || Infinity,
             mainReel.currentTime +
             (1 / REEL_FPS)
-
         );
-
 }
 
 
@@ -2785,14 +2185,10 @@ function previousFrame() {
 
     mainReel.currentTime =
         Math.max(
-
             0,
-
             mainReel.currentTime -
             (1 / REEL_FPS)
-
         );
-
 }
 
 
@@ -2809,29 +2205,16 @@ document.addEventListener(
                 document.activeElement.tagName === "TEXTAREA"
             )
         ) {
-
             return;
-
         }
 
-
-        if (
-            event.key === ","
-        ) {
-
+        if (event.key === ",") {
             previousFrame();
-
         }
 
-
-        if (
-            event.key === "."
-        ) {
-
+        if (event.key === ".") {
             nextFrame();
-
         }
-
     }
 );
 
@@ -2864,18 +2247,14 @@ const revealObserver =
                             .add(
                                 "visible"
                             );
-
                     }
-
                 }
             );
-
         },
 
         {
             threshold: 0.08
         }
-
     );
 
 
@@ -2885,7 +2264,6 @@ revealItems.forEach(
         revealObserver.observe(
             item
         );
-
     }
 );
 
@@ -2925,10 +2303,7 @@ if (
                             "highlight"
                         );
 
-
-                    void reelShell
-                        .offsetWidth;
-
+                    void reelShell.offsetWidth;
 
                     reelShell
                         .classList
@@ -2940,16 +2315,14 @@ if (
 
                 500
             );
-
         }
     );
-
 }
 
 
 
 /* =========================================================
-   HERO MOUSE MOVEMENT
+   SUBTLE HERO MOVEMENT
 ========================================================= */
 
 const heroTitle =
@@ -2970,13 +2343,11 @@ if (
 
             if (!heroTitle) return;
 
-
             const x =
                 (
                     event.clientX -
                     window.innerWidth / 2
                 ) / 140;
-
 
             const y =
                 (
@@ -2984,23 +2355,20 @@ if (
                     window.innerHeight / 2
                 ) / 140;
 
-
             heroTitle.style.transform =
                 "translate(" +
                 x +
                 "px," +
                 y +
                 "px)";
-
         }
     );
-
 }
 
 
 
 /* =========================================================
-   SUBTLE PROJECT MOUSE TILT
+   PROJECT TILT
 ========================================================= */
 
 if (
@@ -3018,26 +2386,21 @@ if (
     screens.forEach(
         function(screen) {
 
-
             screen.addEventListener(
                 "mousemove",
                 function(event) {
-
 
                     const rect =
                         screen
                             .getBoundingClientRect();
 
-
                     const x =
                         event.clientX -
                         rect.left;
 
-
                     const y =
                         event.clientY -
                         rect.top;
-
 
                     const rotateY =
                         (
@@ -3046,14 +2409,12 @@ if (
                             0.5
                         ) * 1.2;
 
-
                     const rotateX =
                         (
                             y /
                             rect.height -
                             0.5
                         ) * -1.2;
-
 
                     screen.style.transform =
                         "perspective(1200px) " +
@@ -3064,7 +2425,6 @@ if (
                         rotateY +
                         "deg) " +
                         "scale(0.992)";
-
                 }
             );
 
@@ -3075,19 +2435,14 @@ if (
 
                     screen.style.transform =
                         "";
-
                 }
             );
-
-
         }
     );
-
 }
 
 
 </script>
-
 
 </body>
 </html>
