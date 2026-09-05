@@ -7,13 +7,37 @@
 
 <title>Justin Breva — 3D Character Animator</title>
 
-<!-- Modern fonts -->
+<!-- FONTS -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+:root {
+
+    --background: #0b0b18;
+    --background-light: #121226;
+
+    --card: rgba(26, 25, 48, 0.75);
+    --card-hover: rgba(35, 32, 62, 0.92);
+
+    --purple: #a78bfa;
+    --purple-light: #c4b5fd;
+
+    --peach: #ffb38a;
+    --pink: #f2a6c8;
+
+    --text: #f7f5ff;
+    --muted: #aaa6bc;
+
+    --border: rgba(255,255,255,0.08);
+}
 
 * {
     margin: 0;
@@ -26,165 +50,486 @@ html {
 }
 
 body {
-    background: #0a0a0a;
-    color: #f5f5f5;
+
     font-family: "DM Sans", sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(167, 139, 250, 0.16),
+            transparent 32%
+        ),
+
+        radial-gradient(
+            circle at 85% 60%,
+            rgba(255, 179, 138, 0.10),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 50% 90%,
+            rgba(242, 166, 200, 0.08),
+            transparent 28%
+        ),
+
+        var(--background);
+
+    color: var(--text);
+
     line-height: 1.6;
+
+    overflow-x: hidden;
 }
 
-/* NAVIGATION */
+::selection {
+    background: var(--purple);
+    color: white;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
 
 nav {
+
     position: fixed;
+
     top: 0;
+    left: 0;
+
     width: 100%;
-    padding: 25px 5%;
+
+    padding: 20px 5%;
+
     display: flex;
+
     justify-content: space-between;
     align-items: center;
 
-    background: rgba(10,10,10,0.75);
-    backdrop-filter: blur(15px);
+    background: rgba(11, 11, 24, 0.65);
+
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.04);
 
     z-index: 1000;
 }
 
+
+/* LOGO */
+
 .logo {
-    font-size: 18px;
-    font-weight: 600;
-    letter-spacing: 3px;
-}
 
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 35px;
-}
-
-nav a {
-    color: #aaa;
-    text-decoration: none;
-    font-size: 14px;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    color: white;
-}
-
-/* HERO */
-
-.hero {
-    min-height: 100vh;
+    width: 48px;
+    height: 48px;
 
     display: flex;
-    flex-direction: column;
+
     justify-content: center;
     align-items: center;
 
-    text-align: center;
+    border-radius: 16px;
 
-    padding: 120px 20px 80px;
+    background:
+        linear-gradient(
+            135deg,
+            var(--purple),
+            var(--peach)
+        );
+
+    color: #0b0b18;
+
+    font-family: "Manrope", sans-serif;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+
+    font-size: 17px;
+
+    box-shadow:
+        0 8px 30px rgba(167,139,250,0.20);
 }
 
-.hero h1 {
-    font-family: "Playfair Display", serif;
 
-    font-size: clamp(60px, 11vw, 150px);
+nav ul {
 
-    font-weight: 600;
+    display: flex;
 
-    letter-spacing: -5px;
+    list-style: none;
 
-    line-height: 0.95;
+    gap: 34px;
 }
 
-.hero-subtitle {
-    margin-top: 25px;
 
-    font-size: 16px;
+nav a {
 
-    letter-spacing: 5px;
-
-    color: #999;
-}
-
-.hero-button {
-    margin-top: 45px;
-
-    padding: 15px 35px;
-
-    border: 1px solid #555;
-
-    border-radius: 50px;
+    color: var(--muted);
 
     text-decoration: none;
 
-    color: white;
+    font-size: 13px;
 
-    font-size: 14px;
+    font-weight: 600;
 
     letter-spacing: 1px;
+
+    transition: 0.25s;
+}
+
+nav a:hover {
+
+    color: var(--purple-light);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding:
+        130px
+        20px
+        80px;
+
+    position: relative;
+}
+
+
+.hero-pill {
+
+    margin-bottom: 25px;
+
+    padding: 9px 17px;
+
+    border-radius: 100px;
+
+    border:
+        1px solid
+        rgba(167,139,250,0.25);
+
+    background:
+        rgba(167,139,250,0.08);
+
+    color: var(--purple-light);
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+.hero h1 {
+
+    font-family: "Manrope", sans-serif;
+
+    font-size:
+        clamp(
+            58px,
+            10vw,
+            145px
+        );
+
+    font-weight: 800;
+
+    letter-spacing: -7px;
+
+    line-height: 0.9;
+
+    max-width: 1200px;
+
+    background:
+        linear-gradient(
+            110deg,
+            #ffffff 15%,
+            #d9cdff 50%,
+            #ffc2a0 100%
+        );
+
+    -webkit-background-clip: text;
+
+    color: transparent;
+}
+
+
+.hero-subtitle {
+
+    margin-top: 32px;
+
+    max-width: 650px;
+
+    color: var(--muted);
+
+    font-size:
+        clamp(
+            16px,
+            2vw,
+            20px
+        );
+
+    font-weight: 300;
+
+    line-height: 1.7;
+}
+
+
+.hero-buttons {
+
+    margin-top: 42px;
+
+    display: flex;
+
+    gap: 14px;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+}
+
+
+.main-button,
+.secondary-button {
+
+    padding: 15px 29px;
+
+    border-radius: 100px;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 600;
 
     transition: 0.3s;
 }
 
-.hero-button:hover {
-    background: white;
-    color: black;
+
+.main-button {
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--purple),
+            var(--peach)
+        );
+
+    color: #11101d;
+
+    box-shadow:
+        0 12px 35px
+        rgba(167,139,250,0.20);
 }
 
-/* GENERAL SECTIONS */
+
+.main-button:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 17px 45px
+        rgba(167,139,250,0.30);
+}
+
+
+.secondary-button {
+
+    color: white;
+
+    border: 1px solid var(--border);
+
+    background:
+        rgba(255,255,255,0.035);
+}
+
+
+.secondary-button:hover {
+
+    background:
+        rgba(255,255,255,0.08);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
 
 section {
-    max-width: 1250px;
+
+    max-width: 1260px;
 
     margin: auto;
 
     padding: 120px 40px;
 }
 
-.section-label {
-    color: #777;
 
-    font-size: 12px;
+.section-label {
+
+    color: var(--purple-light);
+
+    font-size: 11px;
+
+    font-weight: 600;
 
     letter-spacing: 4px;
 
-    margin-bottom: 15px;
+    margin-bottom: 13px;
 }
 
+
 .section-title {
-    font-family: "Playfair Display", serif;
 
-    font-size: clamp(40px, 6vw, 75px);
+    font-family: "Manrope", sans-serif;
 
-    font-weight: 500;
+    font-size:
+        clamp(
+            42px,
+            6vw,
+            78px
+        );
+
+    font-weight: 750;
+
+    letter-spacing: -3px;
+
+    line-height: 1;
 
     margin-bottom: 50px;
 }
 
-/* REEL */
 
-.reel-wrapper {
-    background: #111;
+.section-description {
 
-    padding: 10px;
+    color: var(--muted);
 
-    border-radius: 4px;
+    font-size: 17px;
 
-    border: 1px solid #222;
+    max-width: 650px;
+
+    margin-top: -30px;
+
+    margin-bottom: 48px;
 }
 
+
+/* =========================================================
+   MAIN REEL
+========================================================= */
+
+.reel-wrapper {
+
+    padding: 8px;
+
+    border-radius: 34px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(167,139,250,0.4),
+            rgba(255,179,138,0.20),
+            rgba(255,255,255,0.04)
+        );
+
+    box-shadow:
+        0 25px 80px
+        rgba(0,0,0,0.35);
+}
+
+
 .reel-wrapper video {
+
     width: 100%;
 
     display: block;
 
+    border-radius: 27px;
+
     background: black;
 }
 
-/* WORK GRID */
+
+/* FRAME CONTROL BAR */
+
+.frame-controls {
+
+    margin-top: 18px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+}
+
+
+.frame-button {
+
+    border: 1px solid var(--border);
+
+    background: rgba(255,255,255,0.05);
+
+    color: white;
+
+    border-radius: 50px;
+
+    padding: 10px 16px;
+
+    cursor: pointer;
+
+    font-family: "DM Sans", sans-serif;
+
+    transition: 0.2s;
+}
+
+
+.frame-button:hover {
+
+    background:
+        rgba(167,139,250,0.18);
+
+    border-color:
+        rgba(167,139,250,0.4);
+}
+
+
+.frame-help {
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    margin-left: 7px;
+}
+
+
+/* =========================================================
+   WORK GRID
+========================================================= */
 
 .work-grid {
 
@@ -193,8 +538,11 @@ section {
     grid-template-columns:
         repeat(2, 1fr);
 
-    gap: 25px;
+    gap: 32px;
 }
+
+
+/* ROUNDED BUBBLE CARDS */
 
 .work-card {
 
@@ -202,129 +550,261 @@ section {
 
     aspect-ratio: 16 / 9;
 
-    background: #151515;
-
     overflow: hidden;
 
-    border-radius: 3px;
+    border-radius: 30px;
 
-    border: 1px solid #222;
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    box-shadow:
+        0 20px 55px
+        rgba(0,0,0,0.24);
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
 }
+
+
+.work-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(167,139,250,0.32);
+
+    box-shadow:
+
+        0 25px 65px
+        rgba(0,0,0,0.35),
+
+        0 0 35px
+        rgba(167,139,250,0.10);
+}
+
 
 .work-card video {
 
     width: 100%;
-
     height: 100%;
 
     object-fit: cover;
 
-    transition: transform 0.6s ease;
+    transition:
+        transform 0.6s ease;
 }
+
 
 .work-card:hover video {
 
-    transform: scale(1.04);
+    transform: scale(1.025);
 }
+
 
 .work-info {
 
     position: absolute;
 
     bottom: 0;
-
     left: 0;
 
     width: 100%;
 
-    padding: 30px;
+    padding:
+        55px
+        25px
+        23px;
+
+    pointer-events: none;
 
     background:
         linear-gradient(
             transparent,
-            rgba(0,0,0,0.9)
+            rgba(8,8,20,0.92)
         );
 }
 
+
 .work-title {
 
-    font-family: "Playfair Display", serif;
+    font-family: "Manrope", sans-serif;
 
-    font-size: 25px;
+    font-size: 22px;
+
+    font-weight: 700;
 }
+
 
 .work-credit {
 
-    color: #aaa;
+    margin-top: 4px;
 
-    font-size: 13px;
+    color:
+        rgba(255,255,255,0.65);
 
-    margin-top: 5px;
+    font-size: 12px;
+
+    letter-spacing: 0.5px;
 }
 
-/* CREDITS */
 
-.credits {
+/* =========================================================
+   PRODUCTION WORK
+========================================================= */
+
+.production-grid {
 
     display: grid;
 
     grid-template-columns:
-        repeat(2, 1fr);
+        repeat(2,1fr);
 
-    gap: 1px;
-
-    background: #292929;
+    gap: 20px;
 }
 
-.credit {
 
-    background: #0a0a0a;
+.production-card {
 
-    padding: 45px;
+    min-height: 250px;
+
+    padding: 36px;
+
+    border-radius: 30px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(167,139,250,0.11),
+            rgba(255,179,138,0.06)
+        );
+
+    border: 1px solid var(--border);
 
     transition: 0.3s;
 }
 
-.credit:hover {
 
-    background: #151515;
+.production-card:hover {
+
+    transform: translateY(-5px);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(167,139,250,0.17),
+            rgba(255,179,138,0.10)
+        );
 }
 
-.credit h3 {
 
-    font-family: "Playfair Display", serif;
+.production-number {
 
-    font-size: 28px;
+    position: absolute;
 
-    margin-bottom: 8px;
+    top: 30px;
+    right: 32px;
+
+    color:
+        rgba(255,255,255,0.15);
+
+    font-family: "Manrope";
+
+    font-size: 45px;
+
+    font-weight: 800;
 }
 
-.credit p {
 
-    color: #777;
+.production-card h3 {
+
+    font-family: "Manrope";
+
+    font-size: 26px;
+
+    line-height: 1.25;
+
+    margin-bottom: 9px;
+}
+
+
+.production-card p {
+
+    color: var(--muted);
 
     font-size: 14px;
 }
 
-/* ABOUT */
+
+.locked-tag {
+
+    width: fit-content;
+
+    margin-top: 18px;
+
+    padding:
+        7px 12px;
+
+    border-radius: 30px;
+
+    color: var(--purple-light);
+
+    background:
+        rgba(167,139,250,0.09);
+
+    border:
+        1px solid
+        rgba(167,139,250,0.18);
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
 
 .about {
 
-    max-width: 800px;
+    max-width: 850px;
 }
+
 
 .about p {
 
-    color: #aaa;
+    color: #c0bdcc;
 
-    font-size: 20px;
+    font-size:
+        clamp(
+            18px,
+            2vw,
+            22px
+        );
 
     font-weight: 300;
 
     line-height: 1.9;
 }
 
-/* CONTACT */
+
+/* =========================================================
+   CONTACT
+========================================================= */
 
 .contact {
 
@@ -333,17 +813,22 @@ section {
     padding-bottom: 150px;
 }
 
+
 .contact .section-title {
 
     margin-bottom: 20px;
 }
 
+
 .contact-text {
 
-    color: #888;
+    color: var(--muted);
+
+    font-size: 17px;
 
     margin-bottom: 35px;
 }
+
 
 .contact-buttons {
 
@@ -351,84 +836,188 @@ section {
 
     justify-content: center;
 
-    gap: 15px;
+    gap: 13px;
 
     flex-wrap: wrap;
 }
 
+
 .contact-button {
 
-    padding: 14px 30px;
+    padding:
+        14px
+        26px;
 
-    border: 1px solid #444;
+    border-radius: 100px;
 
-    border-radius: 50px;
+    border:
+        1px solid var(--border);
 
     color: white;
 
     text-decoration: none;
 
+    font-weight: 500;
+
+    background:
+        rgba(255,255,255,0.035);
+
     transition: 0.3s;
 }
 
+
 .contact-button:hover {
 
-    background: white;
+    transform:
+        translateY(-3px);
 
-    color: black;
+    background:
+        rgba(167,139,250,0.12);
+
+    border-color:
+        rgba(167,139,250,0.35);
 }
 
-/* FOOTER */
+
+/* =========================================================
+   FOOTER
+========================================================= */
 
 footer {
 
-    border-top: 1px solid #222;
+    border-top:
+        1px solid
+        var(--border);
 
     text-align: center;
 
     padding: 35px;
 
-    color: #555;
+    color: #6f6c80;
 
-    font-size: 12px;
+    font-size: 11px;
 
     letter-spacing: 1px;
 }
 
-/* MOBILE */
 
-@media (max-width: 700px) {
+/* =========================================================
+   SCROLL FADE
+========================================================= */
+
+.reveal {
+
+    opacity: 0;
+
+    transform:
+        translateY(25px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+
+.reveal.visible {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    nav {
+
+        padding:
+            16px
+            20px;
+    }
 
     nav ul {
-        display: none;
+
+        gap: 15px;
+    }
+
+    nav a {
+
+        font-size: 10px;
+    }
+
+    .logo {
+
+        width: 42px;
+        height: 42px;
+
+        border-radius: 14px;
     }
 
     .hero h1 {
-        letter-spacing: -3px;
+
+        letter-spacing: -4px;
     }
 
     section {
-        padding: 80px 20px;
+
+        padding:
+            90px
+            20px;
     }
 
-    .work-grid {
+    .work-grid,
+    .production-grid {
+
         grid-template-columns: 1fr;
     }
 
-    .credits {
-        grid-template-columns: 1fr;
+    .work-card {
+
+        border-radius: 23px;
+    }
+
+    .section-title {
+
+        letter-spacing: -2px;
+    }
+}
+
+
+@media (max-width: 520px) {
+
+    nav ul {
+
+        display: none;
+    }
+
+    .hero {
+
+        min-height: 90vh;
+    }
+
+    .hero h1 {
+
+        font-size: 58px;
     }
 
 }
 
 </style>
+
 </head>
 
 
 <body>
 
 
-<!-- NAVIGATION -->
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
 
 <nav>
 
@@ -447,6 +1036,10 @@ JB
 </li>
 
 <li>
+<a href="#credits">CREDITS</a>
+</li>
+
+<li>
 <a href="#about">ABOUT</a>
 </li>
 
@@ -459,28 +1052,61 @@ JB
 </nav>
 
 
-<!-- HERO -->
+
+<!-- =====================================================
+     HERO
+===================================================== -->
 
 <header class="hero">
+
+<div class="hero-pill">
+3D Character Animator
+</div>
 
 <h1>
 Justin Breva
 </h1>
 
 <p class="hero-subtitle">
-3D CHARACTER ANIMATOR
+
+Character performance, action animation,
+body mechanics and visual storytelling.
+
 </p>
 
-<a href="#reel" class="hero-button">
-VIEW REEL ↓
+
+<div class="hero-buttons">
+
+<a
+href="#reel"
+class="main-button">
+
+Watch My Reel ↓
+
 </a>
+
+
+<a
+href="#work"
+class="secondary-button">
+
+Selected Work
+
+</a>
+
+</div>
 
 </header>
 
 
-<!-- REEL -->
 
-<section id="reel">
+<!-- =====================================================
+     REEL
+===================================================== -->
+
+<section
+id="reel"
+class="reveal">
 
 <p class="section-label">
 01 — DEMO REEL
@@ -490,11 +1116,25 @@ VIEW REEL ↓
 Animation Reel
 </h2>
 
+<p class="section-description">
+
+A selection of character performance,
+action animation and body mechanics work.
+
+</p>
+
+
 <div class="reel-wrapper">
 
-<video controls controlsList="nodownload">
+<video
+id="mainReel"
+controls
+controlsList="nodownload"
+playsinline>
 
-<source src="reel.mp4" type="video/mp4">
+<source
+src="reel.mp4"
+type="video/mp4">
 
 Your browser does not support video playback.
 
@@ -502,12 +1142,46 @@ Your browser does not support video playback.
 
 </div>
 
+
+<!-- FRAME BY FRAME CONTROLS -->
+
+<div class="frame-controls">
+
+<button
+class="frame-button"
+onclick="previousFrame()">
+
+← Previous Frame
+
+</button>
+
+
+<button
+class="frame-button"
+onclick="nextFrame()">
+
+Next Frame →
+
+</button>
+
+
+<span class="frame-help">
+Frame controls assume 24 FPS
+</span>
+
+</div>
+
 </section>
 
 
-<!-- SELECTED WORK -->
 
-<section id="work">
+<!-- =====================================================
+     SELECTED WORK
+===================================================== -->
+
+<section
+id="work"
+class="reveal">
 
 <p class="section-label">
 02 — SELECTED WORK
@@ -517,6 +1191,13 @@ Your browser does not support video playback.
 Animation
 </h2>
 
+<p class="section-description">
+
+A collection of acting,
+action and character animation shots.
+
+</p>
+
 
 <div class="work-grid">
 
@@ -525,159 +1206,214 @@ Animation
 
 <div class="work-card">
 
-<video muted loop>
+<video
+muted
+loop
+playsinline
+controls
+controlsList="nodownload">
 
-<source src="shot01.mp4" type="video/mp4">
+<source
+src="shot01.mp4"
+type="video/mp4">
 
 </video>
 
 <div class="work-info">
 
 <div class="work-title">
-Character Animation
+Character Acting
 </div>
 
 <div class="work-credit">
-Selected Work · 01
+Personal Animation
 </div>
 
 </div>
 
 </div>
+
 
 
 <!-- SHOT 02 -->
 
 <div class="work-card">
 
-<video muted loop>
+<video
+muted
+loop
+playsinline
+controls
+controlsList="nodownload">
 
-<source src="shot02.mp4" type="video/mp4">
+<source
+src="shot02.mp4"
+type="video/mp4">
 
 </video>
 
 <div class="work-info">
 
 <div class="work-title">
-Character Animation
+Character Acting
 </div>
 
 <div class="work-credit">
-Selected Work · 02
+Personal Animation
 </div>
 
 </div>
 
 </div>
+
 
 
 <!-- SHOT 03 -->
 
 <div class="work-card">
 
-<video muted loop>
+<video
+muted
+loop
+playsinline
+controls
+controlsList="nodownload">
 
-<source src="shot03.mp4" type="video/mp4">
+<source
+src="shot03.mp4"
+type="video/mp4">
 
 </video>
 
 <div class="work-info">
 
 <div class="work-title">
-Action Animation
+Basketball Animation
 </div>
 
 <div class="work-credit">
-Selected Work · 03
+Action · Body Mechanics
 </div>
 
 </div>
 
 </div>
+
 
 
 <!-- SHOT 04 -->
 
 <div class="work-card">
 
-<video muted loop>
+<video
+muted
+loop
+playsinline
+controls
+controlsList="nodownload">
 
-<source src="shot04.mp4" type="video/mp4">
+<source
+src="shot04.mp4"
+type="video/mp4">
 
 </video>
 
 <div class="work-info">
 
 <div class="work-title">
-Character Performance
+Basketball Animation
 </div>
 
 <div class="work-credit">
-Selected Work · 04
+Action · Body Mechanics
 </div>
 
 </div>
 
 </div>
+
 
 
 <!-- SHOT 05 -->
 
 <div class="work-card">
 
-<video muted loop>
+<video
+muted
+loop
+playsinline
+controls
+controlsList="nodownload">
 
-<source src="shot05.mp4" type="video/mp4">
+<source
+src="shot05.mp4"
+type="video/mp4">
 
 </video>
 
 <div class="work-info">
 
 <div class="work-title">
-Body Mechanics
+Fight Sequence
 </div>
 
 <div class="work-credit">
-Selected Work · 05
+Action Animation
 </div>
 
 </div>
 
 </div>
+
 
 
 <!-- SHOT 06 -->
 
 <div class="work-card">
 
-<video muted loop>
+<video
+muted
+loop
+playsinline
+controls
+controlsList="nodownload">
 
-<source src="shot06.mp4" type="video/mp4">
+<source
+src="shot06.mp4"
+type="video/mp4">
 
 </video>
 
 <div class="work-info">
 
 <div class="work-title">
-Action
+Aang Animation
 </div>
 
 <div class="work-credit">
-Selected Work · 06
+Character · Action
 </div>
 
 </div>
 
 </div>
+
 
 
 <!-- SHOT 07 -->
 
 <div class="work-card">
 
-<video muted loop>
+<video
+muted
+loop
+playsinline
+controls
+controlsList="nodownload">
 
-<source src="shot07.mp4" type="video/mp4">
+<source
+src="shot07.mp4"
+type="video/mp4">
 
 </video>
 
@@ -688,7 +1424,7 @@ Character Animation
 </div>
 
 <div class="work-credit">
-Selected Work · 07
+Selected Work
 </div>
 
 </div>
@@ -701,63 +1437,133 @@ Selected Work · 07
 </section>
 
 
-<!-- CREDITS -->
 
-<section>
+<!-- =====================================================
+     PROFESSIONAL CREDITS
+===================================================== -->
+
+<section
+id="credits"
+class="reveal">
 
 <p class="section-label">
-03 — PRODUCTION CREDITS
+03 — PROFESSIONAL WORK
 </p>
 
 <h2 class="section-title">
-Selected Credits
+Production Credits
 </h2>
 
+<p class="section-description">
 
-<div class="credits">
+Selected professional animation work.
+Studio footage is available through
+password-protected viewing links.
 
-
-<div class="credit">
-
-<h3>LEGO Star Wars</h3>
-
-<p>
-Rebuild the Galaxy
 </p>
 
+
+<div class="production-grid">
+
+
+<!-- LEGO STAR WARS -->
+
+<div class="production-card">
+
+<div class="production-number">
+01
 </div>
 
-
-<div class="credit">
-
-<h3>LEGO Star Wars</h3>
-
-<p>
+<h3>
+LEGO Star Wars:
+<br>
+Rebuild the Galaxy —
 Pieces of the Past
-</p>
-
-</div>
-
-
-<div class="credit">
-
-<h3>LEGO Star Wars</h3>
+</h3>
 
 <p>
-The Mandalorian
+3D Character Animation
 </p>
+
+<div class="locked-tag">
+🔒 PROTECTED WORK
+</div>
 
 </div>
 
 
-<div class="credit">
 
-<h3>Barbie</h3>
+<!-- LEGO STAR WARS MANDALORIAN -->
+
+<div class="production-card">
+
+<div class="production-number">
+02
+</div>
+
+<h3>
+LEGO Star Wars:
+<br>
+The Mandalorian
+</h3>
+
+<p>
+3D Character Animation
+</p>
+
+<div class="locked-tag">
+🔒 PROTECTED WORK
+</div>
+
+</div>
+
+
+
+<!-- BARBIE -->
+
+<div class="production-card">
+
+<div class="production-number">
+03
+</div>
+
+<h3>
+Barbie
+</h3>
 
 <p>
 Selected Netflix Productions
 </p>
 
+<div class="locked-tag">
+🔒 PROTECTED WORK
+</div>
+
+</div>
+
+
+
+<!-- MORE -->
+
+<div class="production-card">
+
+<div class="production-number">
+04
+</div>
+
+<h3>
+Additional Production Work
+</h3>
+
+<p>
+Selected professional character animation
+and performance work.
+</p>
+
+<div class="locked-tag">
+🔒 PROTECTED WORK
+</div>
+
 </div>
 
 
@@ -766,9 +1572,14 @@ Selected Netflix Productions
 </section>
 
 
-<!-- ABOUT -->
 
-<section id="about">
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section
+id="about"
+class="reveal">
 
 <p class="section-label">
 04 — ABOUT
@@ -778,13 +1589,14 @@ Selected Netflix Productions
 About Me
 </h2>
 
+
 <div class="about">
 
 <p>
 
-I'm a 3D character animator passionate about
-creating expressive performances, dynamic action,
-and engaging character movement.
+I'm a 3D character animator focused on
+creating expressive performances,
+dynamic action and believable character movement.
 
 </p>
 
@@ -793,9 +1605,9 @@ and engaging character movement.
 <p>
 
 My experience includes animation for television
-and streaming productions, with a focus on
-character acting, body mechanics, timing,
-and strong visual storytelling.
+and streaming productions, with a strong interest
+in character acting, action animation,
+body mechanics, timing and visual storytelling.
 
 </p>
 
@@ -804,22 +1616,27 @@ and strong visual storytelling.
 </section>
 
 
-<!-- CONTACT -->
 
-<section id="contact" class="contact">
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section
+id="contact"
+class="contact reveal">
 
 <p class="section-label">
 05 — CONTACT
 </p>
 
 <h2 class="section-title">
-Let's Work Together
+Let's Create Something.
 </h2>
 
 <p class="contact-text">
 
-For animation opportunities, freelance work,
-or just to get in touch.
+For animation opportunities,
+freelance work or just to get in touch.
 
 </p>
 
@@ -837,9 +1654,9 @@ Email Me
 
 <a
 href="https://www.linkedin.com/in/justin-breva-064411197/"
-class="contact-button"
 target="_blank"
-rel="noopener noreferrer">
+rel="noopener noreferrer"
+class="contact-button">
 
 LinkedIn
 
@@ -850,13 +1667,216 @@ LinkedIn
 </section>
 
 
-<!-- FOOTER -->
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
 
-© 2026 Justin Breva · All Rights Reserved
+© 2026 Justin Breva · 3D Character Animator · All Rights Reserved
 
 </footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+/* =====================================================
+   FRAME BY FRAME CONTROLS
+===================================================== */
+
+const mainReel =
+    document.getElementById("mainReel");
+
+
+// Animation is commonly viewed at 24 FPS.
+// Change this number if your reel uses another FPS.
+
+const REEL_FPS = 24;
+
+
+function nextFrame() {
+
+    if (!mainReel) return;
+
+    mainReel.pause();
+
+    mainReel.currentTime =
+        Math.min(
+            mainReel.duration || Infinity,
+            mainReel.currentTime +
+            (1 / REEL_FPS)
+        );
+
+}
+
+
+function previousFrame() {
+
+    if (!mainReel) return;
+
+    mainReel.pause();
+
+    mainReel.currentTime =
+        Math.max(
+            0,
+            mainReel.currentTime -
+            (1 / REEL_FPS)
+        );
+
+}
+
+
+/* =====================================================
+   KEYBOARD FRAME CONTROLS
+
+   , = previous frame
+   . = next frame
+
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            document.activeElement
+            &&
+            (
+                document.activeElement.tagName === "INPUT"
+                ||
+                document.activeElement.tagName === "TEXTAREA"
+            )
+        ) {
+
+            return;
+
+        }
+
+
+        if (event.key === ",") {
+
+            previousFrame();
+
+        }
+
+
+        if (event.key === ".") {
+
+            nextFrame();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   SCROLL REVEAL
+===================================================== */
+
+const revealElements =
+    document.querySelectorAll(".reveal");
+
+
+const revealObserver =
+    new IntersectionObserver(
+
+        function(entries) {
+
+            entries.forEach(
+                function(entry) {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target
+                            .classList
+                            .add("visible");
+
+                    }
+
+                }
+            );
+
+        },
+
+        {
+            threshold: 0.12
+        }
+
+    );
+
+
+revealElements.forEach(
+    function(element) {
+
+        revealObserver.observe(element);
+
+    }
+);
+
+
+/* =====================================================
+   VIDEO HOVER PREVIEW
+
+   Videos begin playing when the mouse enters
+   the rounded card and pause when it leaves.
+===================================================== */
+
+const workCards =
+    document.querySelectorAll(".work-card");
+
+
+workCards.forEach(
+    function(card) {
+
+        const video =
+            card.querySelector("video");
+
+
+        card.addEventListener(
+            "mouseenter",
+            function() {
+
+                if (video) {
+
+                    video.play()
+                        .catch(
+                            function() {
+                                // Browser autoplay restriction.
+                            }
+                        );
+
+                }
+
+            }
+        );
+
+
+        card.addEventListener(
+            "mouseleave",
+            function() {
+
+                if (video) {
+
+                    video.pause();
+
+                }
+
+            }
+        );
+
+    }
+);
+
+
+</script>
 
 
 </body>
