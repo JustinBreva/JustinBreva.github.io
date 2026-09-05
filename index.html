@@ -7,7 +7,6 @@
 
 <title>Justin Breva — 3D Character Animator</title>
 
-<!-- FONTS -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -15,28 +14,23 @@
 
 <style>
 
-/* =========================================================
-   GLOBAL
-========================================================= */
-
 :root {
+    --background: #18182a;
+    --background-soft: #22223a;
 
-    --background: #0b0b18;
-    --background-light: #121226;
+    --card: rgba(48, 46, 76, 0.82);
+    --card-hover: rgba(62, 59, 95, 0.95);
 
-    --card: rgba(26, 25, 48, 0.75);
-    --card-hover: rgba(35, 32, 62, 0.92);
+    --purple: #b9a8ff;
+    --purple-light: #ded6ff;
 
-    --purple: #a78bfa;
-    --purple-light: #c4b5fd;
+    --peach: #ffc2a2;
+    --pink: #efb5d0;
 
-    --peach: #ffb38a;
-    --pink: #f2a6c8;
+    --text: #fffaf7;
+    --muted: #c8c3d4;
 
-    --text: #f7f5ff;
-    --muted: #aaa6bc;
-
-    --border: rgba(255,255,255,0.08);
+    --border: rgba(255,255,255,0.12);
 }
 
 * {
@@ -50,28 +44,24 @@ html {
 }
 
 body {
-
     font-family: "DM Sans", sans-serif;
 
     background:
         radial-gradient(
             circle at 15% 15%,
-            rgba(167, 139, 250, 0.16),
+            rgba(185,168,255,0.23),
+            transparent 34%
+        ),
+        radial-gradient(
+            circle at 85% 55%,
+            rgba(255,194,162,0.17),
             transparent 32%
         ),
-
         radial-gradient(
-            circle at 85% 60%,
-            rgba(255, 179, 138, 0.10),
+            circle at 45% 90%,
+            rgba(239,181,208,0.12),
             transparent 30%
         ),
-
-        radial-gradient(
-            circle at 50% 90%,
-            rgba(242, 166, 200, 0.08),
-            transparent 28%
-        ),
-
         var(--background);
 
     color: var(--text);
@@ -83,16 +73,15 @@ body {
 
 ::selection {
     background: var(--purple);
-    color: white;
+    color: #161625;
 }
 
 
-/* =========================================================
+/* =========================
    NAVIGATION
-========================================================= */
+========================= */
 
 nav {
-
     position: fixed;
 
     top: 0;
@@ -100,28 +89,24 @@ nav {
 
     width: 100%;
 
-    padding: 20px 5%;
+    padding: 18px 5%;
 
     display: flex;
 
     justify-content: space-between;
     align-items: center;
 
-    background: rgba(11, 11, 24, 0.65);
+    background: rgba(24,24,42,0.68);
 
     backdrop-filter: blur(22px);
     -webkit-backdrop-filter: blur(22px);
 
-    border-bottom: 1px solid rgba(255,255,255,0.04);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
 
     z-index: 1000;
 }
 
-
-/* LOGO */
-
 .logo {
-
     width: 48px;
     height: 48px;
 
@@ -130,7 +115,7 @@ nav {
     justify-content: center;
     align-items: center;
 
-    border-radius: 16px;
+    border-radius: 17px;
 
     background:
         linear-gradient(
@@ -139,39 +124,34 @@ nav {
             var(--peach)
         );
 
-    color: #0b0b18;
+    color: #181829;
 
     font-family: "Manrope", sans-serif;
 
+    font-size: 17px;
     font-weight: 800;
 
     letter-spacing: -1px;
 
-    font-size: 17px;
-
     box-shadow:
-        0 8px 30px rgba(167,139,250,0.20);
+        0 10px 35px
+        rgba(185,168,255,0.24);
 }
 
-
 nav ul {
-
     display: flex;
 
     list-style: none;
 
-    gap: 34px;
+    gap: 32px;
 }
 
-
 nav a {
-
     color: var(--muted);
 
     text-decoration: none;
 
-    font-size: 13px;
-
+    font-size: 12px;
     font-weight: 600;
 
     letter-spacing: 1px;
@@ -180,17 +160,15 @@ nav a {
 }
 
 nav a:hover {
-
-    color: var(--purple-light);
+    color: white;
 }
 
 
-/* =========================================================
+/* =========================
    HERO
-========================================================= */
+========================= */
 
 .hero {
-
     min-height: 100vh;
 
     display: flex;
@@ -206,30 +184,25 @@ nav a:hover {
         130px
         20px
         80px;
-
-    position: relative;
 }
 
-
 .hero-pill {
+    margin-bottom: 24px;
 
-    margin-bottom: 25px;
-
-    padding: 9px 17px;
+    padding: 9px 18px;
 
     border-radius: 100px;
 
     border:
         1px solid
-        rgba(167,139,250,0.25);
+        rgba(185,168,255,0.30);
 
     background:
-        rgba(167,139,250,0.08);
+        rgba(185,168,255,0.10);
 
     color: var(--purple-light);
 
-    font-size: 12px;
-
+    font-size: 11px;
     font-weight: 600;
 
     letter-spacing: 2px;
@@ -237,14 +210,12 @@ nav a:hover {
     text-transform: uppercase;
 }
 
-
 .hero h1 {
-
     font-family: "Manrope", sans-serif;
 
     font-size:
         clamp(
-            58px,
+            60px,
             10vw,
             145px
         );
@@ -255,25 +226,22 @@ nav a:hover {
 
     line-height: 0.9;
 
-    max-width: 1200px;
-
     background:
         linear-gradient(
             110deg,
-            #ffffff 15%,
-            #d9cdff 50%,
-            #ffc2a0 100%
+            #ffffff 10%,
+            #e2daff 50%,
+            #ffd0b8 100%
         );
 
     -webkit-background-clip: text;
+    background-clip: text;
 
     color: transparent;
 }
 
-
 .hero-subtitle {
-
-    margin-top: 32px;
+    margin-top: 30px;
 
     max-width: 650px;
 
@@ -291,24 +259,20 @@ nav a:hover {
     line-height: 1.7;
 }
 
-
 .hero-buttons {
-
     margin-top: 42px;
 
     display: flex;
 
+    justify-content: center;
+
     gap: 14px;
 
     flex-wrap: wrap;
-
-    justify-content: center;
 }
-
 
 .main-button,
 .secondary-button {
-
     padding: 15px 29px;
 
     border-radius: 100px;
@@ -316,15 +280,12 @@ nav a:hover {
     text-decoration: none;
 
     font-size: 13px;
-
     font-weight: 600;
 
     transition: 0.3s;
 }
 
-
 .main-button {
-
     background:
         linear-gradient(
             135deg,
@@ -332,50 +293,43 @@ nav a:hover {
             var(--peach)
         );
 
-    color: #11101d;
+    color: #171727;
 
     box-shadow:
-        0 12px 35px
-        rgba(167,139,250,0.20);
+        0 14px 38px
+        rgba(185,168,255,0.22);
 }
 
-
 .main-button:hover {
-
     transform: translateY(-3px);
 
     box-shadow:
-        0 17px 45px
-        rgba(167,139,250,0.30);
+        0 18px 45px
+        rgba(185,168,255,0.30);
 }
 
-
 .secondary-button {
-
     color: white;
 
     border: 1px solid var(--border);
 
     background:
-        rgba(255,255,255,0.035);
+        rgba(255,255,255,0.05);
 }
-
 
 .secondary-button:hover {
+    transform: translateY(-3px);
 
     background:
-        rgba(255,255,255,0.08);
-
-    transform: translateY(-3px);
+        rgba(255,255,255,0.09);
 }
 
 
-/* =========================================================
-   SECTIONS
-========================================================= */
+/* =========================
+   GENERAL SECTIONS
+========================= */
 
 section {
-
     max-width: 1260px;
 
     margin: auto;
@@ -383,13 +337,10 @@ section {
     padding: 120px 40px;
 }
 
-
 .section-label {
-
     color: var(--purple-light);
 
     font-size: 11px;
-
     font-weight: 600;
 
     letter-spacing: 4px;
@@ -397,9 +348,7 @@ section {
     margin-bottom: 13px;
 }
 
-
 .section-title {
-
     font-family: "Manrope", sans-serif;
 
     font-size:
@@ -418,9 +367,7 @@ section {
     margin-bottom: 50px;
 }
 
-
 .section-description {
-
     color: var(--muted);
 
     font-size: 17px;
@@ -433,52 +380,47 @@ section {
 }
 
 
-/* =========================================================
-   MAIN REEL
-========================================================= */
+/* =========================
+   DEMO REEL
+========================= */
 
 .reel-wrapper {
-
     padding: 8px;
 
-    border-radius: 34px;
+    border-radius: 35px;
 
     background:
         linear-gradient(
             135deg,
-            rgba(167,139,250,0.4),
-            rgba(255,179,138,0.20),
-            rgba(255,255,255,0.04)
+            rgba(185,168,255,0.48),
+            rgba(255,194,162,0.28),
+            rgba(255,255,255,0.08)
         );
 
     box-shadow:
-        0 25px 80px
-        rgba(0,0,0,0.35);
+        0 28px 75px
+        rgba(0,0,0,0.25);
 }
 
-
 .reel-wrapper video {
-
     width: 100%;
 
     display: block;
 
-    border-radius: 27px;
+    border-radius: 28px;
 
     background: black;
 }
 
 
-/* FRAME CONTROL BAR */
+/* FRAME CONTROLS */
 
 .frame-controls {
-
     margin-top: 18px;
 
     display: flex;
 
     justify-content: center;
-
     align-items: center;
 
     gap: 10px;
@@ -486,12 +428,11 @@ section {
     flex-wrap: wrap;
 }
 
-
 .frame-button {
-
     border: 1px solid var(--border);
 
-    background: rgba(255,255,255,0.05);
+    background:
+        rgba(255,255,255,0.06);
 
     color: white;
 
@@ -506,19 +447,15 @@ section {
     transition: 0.2s;
 }
 
-
 .frame-button:hover {
-
     background:
-        rgba(167,139,250,0.18);
+        rgba(185,168,255,0.20);
 
     border-color:
-        rgba(167,139,250,0.4);
+        rgba(185,168,255,0.45);
 }
 
-
 .frame-help {
-
     color: var(--muted);
 
     font-size: 12px;
@@ -527,32 +464,27 @@ section {
 }
 
 
-/* =========================================================
+/* =========================
    WORK GRID
-========================================================= */
+========================= */
 
 .work-grid {
-
     display: grid;
 
     grid-template-columns:
-        repeat(2, 1fr);
+        repeat(2,1fr);
 
-    gap: 32px;
+    gap: 30px;
 }
 
-
-/* ROUNDED BUBBLE CARDS */
-
 .work-card {
-
     position: relative;
 
     aspect-ratio: 16 / 9;
 
     overflow: hidden;
 
-    border-radius: 30px;
+    border-radius: 31px;
 
     background: var(--card);
 
@@ -560,7 +492,7 @@ section {
 
     box-shadow:
         0 20px 55px
-        rgba(0,0,0,0.24);
+        rgba(0,0,0,0.22);
 
     transition:
         transform 0.35s ease,
@@ -568,27 +500,21 @@ section {
         box-shadow 0.35s ease;
 }
 
-
 .work-card:hover {
-
     transform:
         translateY(-7px);
 
     border-color:
-        rgba(167,139,250,0.32);
+        rgba(185,168,255,0.4);
 
     box-shadow:
-
-        0 25px 65px
-        rgba(0,0,0,0.35),
-
+        0 27px 65px
+        rgba(0,0,0,0.28),
         0 0 35px
-        rgba(167,139,250,0.10);
+        rgba(185,168,255,0.12);
 }
 
-
 .work-card video {
-
     width: 100%;
     height: 100%;
 
@@ -598,15 +524,12 @@ section {
         transform 0.6s ease;
 }
 
-
 .work-card:hover video {
-
-    transform: scale(1.025);
+    transform:
+        scale(1.025);
 }
 
-
 .work-info {
-
     position: absolute;
 
     bottom: 0;
@@ -615,7 +538,7 @@ section {
     width: 100%;
 
     padding:
-        55px
+        60px
         25px
         23px;
 
@@ -624,54 +547,49 @@ section {
     background:
         linear-gradient(
             transparent,
-            rgba(8,8,20,0.92)
+            rgba(24,24,42,0.95)
         );
 }
 
-
 .work-title {
-
-    font-family: "Manrope", sans-serif;
+    font-family:
+        "Manrope",
+        sans-serif;
 
     font-size: 22px;
 
     font-weight: 700;
 }
 
-
 .work-credit {
-
     margin-top: 4px;
 
     color:
-        rgba(255,255,255,0.65);
+        rgba(255,255,255,0.68);
 
     font-size: 12px;
 
-    letter-spacing: 0.5px;
+    letter-spacing: 0.4px;
 }
 
 
-/* =========================================================
-   PRODUCTION WORK
-========================================================= */
+/* =========================
+   PRODUCTION CREDITS
+========================= */
 
 .production-grid {
-
     display: grid;
 
     grid-template-columns:
-        repeat(2,1fr);
+        repeat(3,1fr);
 
-    gap: 20px;
+    gap: 22px;
 }
 
-
 .production-card {
+    min-height: 240px;
 
-    min-height: 250px;
-
-    padding: 36px;
+    padding: 30px;
 
     border-radius: 30px;
 
@@ -688,106 +606,100 @@ section {
     background:
         linear-gradient(
             145deg,
-            rgba(167,139,250,0.11),
-            rgba(255,179,138,0.06)
+            rgba(185,168,255,0.17),
+            rgba(255,194,162,0.10)
         );
 
     border: 1px solid var(--border);
 
+    box-shadow:
+        0 18px 45px
+        rgba(0,0,0,0.12);
+
     transition: 0.3s;
 }
 
+.production-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 160px;
+    height: 160px;
+
+    border-radius: 50%;
+
+    top: -80px;
+    right: -60px;
+
+    background:
+        rgba(255,255,255,0.06);
+
+    filter: blur(2px);
+}
 
 .production-card:hover {
-
-    transform: translateY(-5px);
+    transform:
+        translateY(-6px);
 
     background:
         linear-gradient(
             145deg,
-            rgba(167,139,250,0.17),
-            rgba(255,179,138,0.10)
+            rgba(185,168,255,0.23),
+            rgba(255,194,162,0.15)
         );
+
+    border-color:
+        rgba(255,255,255,0.18);
 }
 
-
 .production-number {
-
     position: absolute;
 
-    top: 30px;
-    right: 32px;
+    top: 24px;
+    right: 27px;
 
     color:
-        rgba(255,255,255,0.15);
+        rgba(255,255,255,0.16);
 
-    font-family: "Manrope";
+    font-family:
+        "Manrope",
+        sans-serif;
 
-    font-size: 45px;
+    font-size: 42px;
 
     font-weight: 800;
 }
 
-
 .production-card h3 {
+    font-family:
+        "Manrope",
+        sans-serif;
 
-    font-family: "Manrope";
-
-    font-size: 26px;
+    font-size: 23px;
 
     line-height: 1.25;
 
-    margin-bottom: 9px;
+    margin-bottom: 10px;
 }
-
 
 .production-card p {
-
     color: var(--muted);
 
-    font-size: 14px;
+    font-size: 13px;
 }
 
 
-.locked-tag {
-
-    width: fit-content;
-
-    margin-top: 18px;
-
-    padding:
-        7px 12px;
-
-    border-radius: 30px;
-
-    color: var(--purple-light);
-
-    background:
-        rgba(167,139,250,0.09);
-
-    border:
-        1px solid
-        rgba(167,139,250,0.18);
-
-    font-size: 11px;
-
-    letter-spacing: 1px;
-}
-
-
-/* =========================================================
+/* =========================
    ABOUT
-========================================================= */
+========================= */
 
 .about {
-
     max-width: 850px;
 }
 
-
 .about p {
-
-    color: #c0bdcc;
+    color: #d1ccdc;
 
     font-size:
         clamp(
@@ -802,26 +714,21 @@ section {
 }
 
 
-/* =========================================================
+/* =========================
    CONTACT
-========================================================= */
+========================= */
 
 .contact {
-
     text-align: center;
 
     padding-bottom: 150px;
 }
 
-
 .contact .section-title {
-
     margin-bottom: 20px;
 }
 
-
 .contact-text {
-
     color: var(--muted);
 
     font-size: 17px;
@@ -829,9 +736,7 @@ section {
     margin-bottom: 35px;
 }
 
-
 .contact-buttons {
-
     display: flex;
 
     justify-content: center;
@@ -841,17 +746,16 @@ section {
     flex-wrap: wrap;
 }
 
-
 .contact-button {
-
     padding:
         14px
-        26px;
+        27px;
 
     border-radius: 100px;
 
     border:
-        1px solid var(--border);
+        1px solid
+        var(--border);
 
     color: white;
 
@@ -860,31 +764,28 @@ section {
     font-weight: 500;
 
     background:
-        rgba(255,255,255,0.035);
+        rgba(255,255,255,0.05);
 
     transition: 0.3s;
 }
 
-
 .contact-button:hover {
-
     transform:
         translateY(-3px);
 
     background:
-        rgba(167,139,250,0.12);
+        rgba(185,168,255,0.15);
 
     border-color:
-        rgba(167,139,250,0.35);
+        rgba(185,168,255,0.40);
 }
 
 
-/* =========================================================
+/* =========================
    FOOTER
-========================================================= */
+========================= */
 
 footer {
-
     border-top:
         1px solid
         var(--border);
@@ -893,7 +794,7 @@ footer {
 
     padding: 35px;
 
-    color: #6f6c80;
+    color: #918da2;
 
     font-size: 11px;
 
@@ -901,12 +802,11 @@ footer {
 }
 
 
-/* =========================================================
-   SCROLL FADE
-========================================================= */
+/* =========================
+   SCROLL REVEAL
+========================= */
 
 .reveal {
-
     opacity: 0;
 
     transform:
@@ -917,9 +817,7 @@ footer {
         transform 0.7s ease;
 }
 
-
 .reveal.visible {
-
     opacity: 1;
 
     transform:
@@ -927,31 +825,41 @@ footer {
 }
 
 
-/* =========================================================
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 950px) {
+
+    .production-grid {
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+}
+
+
+/* =========================
    MOBILE
-========================================================= */
+========================= */
 
 @media (max-width: 800px) {
 
     nav {
-
         padding:
-            16px
+            15px
             20px;
     }
 
     nav ul {
-
         gap: 15px;
     }
 
     nav a {
-
         font-size: 10px;
     }
 
     .logo {
-
         width: 42px;
         height: 42px;
 
@@ -959,744 +867,749 @@ footer {
     }
 
     .hero h1 {
-
         letter-spacing: -4px;
     }
 
     section {
-
         padding:
             90px
             20px;
     }
 
-    .work-grid,
-    .production-grid {
-
-        grid-template-columns: 1fr;
-    }
-
-    .work-card {
-
-        border-radius: 23px;
+    .work-grid {
+        grid-template-columns:
+            1fr;
     }
 
     .section-title {
-
         letter-spacing: -2px;
     }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .production-grid {
+        grid-template-columns:
+            1fr;
+    }
+
 }
 
 
 @media (max-width: 520px) {
 
     nav ul {
-
         display: none;
     }
 
     .hero {
-
         min-height: 90vh;
     }
 
     .hero h1 {
-
         font-size: 58px;
     }
 
 }
 
-</style>
 
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}
+
+</style>
 </head>
 
 
 <body>
 
 
-<!-- =====================================================
+<!-- =========================
      NAVIGATION
-===================================================== -->
+========================= -->
 
 <nav>
 
-<div class="logo">
-JB
-</div>
+    <div class="logo">
+        JB
+    </div>
 
-<ul>
+    <ul>
 
-<li>
-<a href="#reel">REEL</a>
-</li>
+        <li>
+            <a href="#reel">
+                REEL
+            </a>
+        </li>
 
-<li>
-<a href="#work">WORK</a>
-</li>
+        <li>
+            <a href="#work">
+                WORK
+            </a>
+        </li>
 
-<li>
-<a href="#credits">CREDITS</a>
-</li>
+        <li>
+            <a href="#credits">
+                CREDITS
+            </a>
+        </li>
 
-<li>
-<a href="#about">ABOUT</a>
-</li>
+        <li>
+            <a href="#about">
+                ABOUT
+            </a>
+        </li>
 
-<li>
-<a href="#contact">CONTACT</a>
-</li>
+        <li>
+            <a href="#contact">
+                CONTACT
+            </a>
+        </li>
 
-</ul>
+    </ul>
 
 </nav>
 
 
-
-<!-- =====================================================
+<!-- =========================
      HERO
-===================================================== -->
+========================= -->
 
 <header class="hero">
 
-<div class="hero-pill">
-3D Character Animator
-</div>
+    <div class="hero-pill">
+        3D Character Animator
+    </div>
 
-<h1>
-Justin Breva
-</h1>
+    <h1>
+        Justin Breva
+    </h1>
 
-<p class="hero-subtitle">
+    <p class="hero-subtitle">
 
-Character performance, action animation,
-body mechanics and visual storytelling.
+        Character performance,
+        action animation,
+        body mechanics
+        and visual storytelling.
 
-</p>
+    </p>
 
+    <div class="hero-buttons">
 
-<div class="hero-buttons">
+        <a
+        href="#reel"
+        class="main-button">
 
-<a
-href="#reel"
-class="main-button">
+            Watch My Reel ↓
 
-Watch My Reel ↓
+        </a>
 
-</a>
+        <a
+        href="#work"
+        class="secondary-button">
 
+            Selected Work
 
-<a
-href="#work"
-class="secondary-button">
+        </a>
 
-Selected Work
-
-</a>
-
-</div>
+    </div>
 
 </header>
 
 
-
-<!-- =====================================================
-     REEL
-===================================================== -->
+<!-- =========================
+     DEMO REEL
+========================= -->
 
 <section
 id="reel"
 class="reveal">
 
-<p class="section-label">
-01 — DEMO REEL
-</p>
+    <p class="section-label">
+        01 — DEMO REEL
+    </p>
 
-<h2 class="section-title">
-Animation Reel
-</h2>
+    <h2 class="section-title">
+        Animation Reel
+    </h2>
 
-<p class="section-description">
+    <p class="section-description">
 
-A selection of character performance,
-action animation and body mechanics work.
+        A selection of character performance,
+        action animation and body mechanics work.
 
-</p>
+    </p>
 
+    <div class="reel-wrapper">
 
-<div class="reel-wrapper">
+        <video
+        id="mainReel"
+        controls
+        controlsList="nodownload"
+        playsinline>
 
-<video
-id="mainReel"
-controls
-controlsList="nodownload"
-playsinline>
+            <source
+            src="reel.mp4"
+            type="video/mp4">
 
-<source
-src="reel.mp4"
-type="video/mp4">
+            Your browser does not support video playback.
 
-Your browser does not support video playback.
+        </video>
 
-</video>
+    </div>
 
-</div>
+    <div class="frame-controls">
 
+        <button
+        class="frame-button"
+        onclick="previousFrame()">
 
-<!-- FRAME BY FRAME CONTROLS -->
+            ← Previous Frame
 
-<div class="frame-controls">
+        </button>
 
-<button
-class="frame-button"
-onclick="previousFrame()">
+        <button
+        class="frame-button"
+        onclick="nextFrame()">
 
-← Previous Frame
+            Next Frame →
 
-</button>
+        </button>
 
+        <span class="frame-help">
+            Frame controls: 24 FPS
+        </span>
 
-<button
-class="frame-button"
-onclick="nextFrame()">
-
-Next Frame →
-
-</button>
-
-
-<span class="frame-help">
-Frame controls assume 24 FPS
-</span>
-
-</div>
+    </div>
 
 </section>
 
 
-
-<!-- =====================================================
+<!-- =========================
      SELECTED WORK
-===================================================== -->
+========================= -->
 
 <section
 id="work"
 class="reveal">
 
-<p class="section-label">
-02 — SELECTED WORK
-</p>
+    <p class="section-label">
+        02 — SELECTED WORK
+    </p>
 
-<h2 class="section-title">
-Animation
-</h2>
+    <h2 class="section-title">
+        Animation
+    </h2>
 
-<p class="section-description">
+    <p class="section-description">
 
-A collection of acting,
-action and character animation shots.
+        A collection of acting,
+        action and character animation shots.
 
-</p>
+    </p>
 
 
-<div class="work-grid">
+    <div class="work-grid">
 
 
-<!-- SHOT 01 -->
+        <!-- SHOT 01 -->
 
-<div class="work-card">
+        <div class="work-card">
 
-<video
-muted
-loop
-playsinline
-controls
-controlsList="nodownload">
+            <video
+            muted
+            loop
+            playsinline
+            controls
+            controlsList="nodownload">
 
-<source
-src="shot01.mp4"
-type="video/mp4">
+                <source
+                src="shot01.mp4"
+                type="video/mp4">
 
-</video>
+            </video>
 
-<div class="work-info">
+            <div class="work-info">
 
-<div class="work-title">
-Character Acting
-</div>
+                <div class="work-title">
+                    Character Acting
+                </div>
 
-<div class="work-credit">
-Personal Animation
-</div>
+                <div class="work-credit">
+                    Personal Animation
+                </div>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
 
+        <!-- SHOT 02 -->
 
-<!-- SHOT 02 -->
+        <div class="work-card">
 
-<div class="work-card">
+            <video
+            muted
+            loop
+            playsinline
+            controls
+            controlsList="nodownload">
 
-<video
-muted
-loop
-playsinline
-controls
-controlsList="nodownload">
+                <source
+                src="shot02.mp4"
+                type="video/mp4">
 
-<source
-src="shot02.mp4"
-type="video/mp4">
+            </video>
 
-</video>
+            <div class="work-info">
 
-<div class="work-info">
+                <div class="work-title">
+                    Character Acting
+                </div>
 
-<div class="work-title">
-Character Acting
-</div>
+                <div class="work-credit">
+                    Personal Animation
+                </div>
 
-<div class="work-credit">
-Personal Animation
-</div>
+            </div>
 
-</div>
+        </div>
 
-</div>
 
+        <!-- SHOT 03 -->
 
+        <div class="work-card">
 
-<!-- SHOT 03 -->
+            <video
+            muted
+            loop
+            playsinline
+            controls
+            controlsList="nodownload">
 
-<div class="work-card">
+                <source
+                src="shot03.mp4"
+                type="video/mp4">
 
-<video
-muted
-loop
-playsinline
-controls
-controlsList="nodownload">
+            </video>
 
-<source
-src="shot03.mp4"
-type="video/mp4">
+            <div class="work-info">
 
-</video>
+                <div class="work-title">
+                    Basketball Animation
+                </div>
 
-<div class="work-info">
+                <div class="work-credit">
+                    Action · Body Mechanics
+                </div>
 
-<div class="work-title">
-Basketball Animation
-</div>
+            </div>
 
-<div class="work-credit">
-Action · Body Mechanics
-</div>
+        </div>
 
-</div>
 
-</div>
+        <!-- SHOT 04 -->
 
+        <div class="work-card">
 
+            <video
+            muted
+            loop
+            playsinline
+            controls
+            controlsList="nodownload">
 
-<!-- SHOT 04 -->
+                <source
+                src="shot04.mp4"
+                type="video/mp4">
 
-<div class="work-card">
+            </video>
 
-<video
-muted
-loop
-playsinline
-controls
-controlsList="nodownload">
+            <div class="work-info">
 
-<source
-src="shot04.mp4"
-type="video/mp4">
+                <div class="work-title">
+                    Basketball Animation
+                </div>
 
-</video>
+                <div class="work-credit">
+                    Action · Body Mechanics
+                </div>
 
-<div class="work-info">
+            </div>
 
-<div class="work-title">
-Basketball Animation
-</div>
+        </div>
 
-<div class="work-credit">
-Action · Body Mechanics
-</div>
 
-</div>
+        <!-- SHOT 05 -->
 
-</div>
+        <div class="work-card">
 
+            <video
+            muted
+            loop
+            playsinline
+            controls
+            controlsList="nodownload">
 
+                <source
+                src="shot05.mp4"
+                type="video/mp4">
 
-<!-- SHOT 05 -->
+            </video>
 
-<div class="work-card">
+            <div class="work-info">
 
-<video
-muted
-loop
-playsinline
-controls
-controlsList="nodownload">
+                <div class="work-title">
+                    Fight Sequence
+                </div>
 
-<source
-src="shot05.mp4"
-type="video/mp4">
+                <div class="work-credit">
+                    Action Animation
+                </div>
 
-</video>
+            </div>
 
-<div class="work-info">
+        </div>
 
-<div class="work-title">
-Fight Sequence
-</div>
 
-<div class="work-credit">
-Action Animation
-</div>
+        <!-- SHOT 06 -->
 
-</div>
+        <div class="work-card">
 
-</div>
+            <video
+            muted
+            loop
+            playsinline
+            controls
+            controlsList="nodownload">
 
+                <source
+                src="shot06.mp4"
+                type="video/mp4">
 
+            </video>
 
-<!-- SHOT 06 -->
+            <div class="work-info">
 
-<div class="work-card">
+                <div class="work-title">
+                    Aang Animation
+                </div>
 
-<video
-muted
-loop
-playsinline
-controls
-controlsList="nodownload">
+                <div class="work-credit">
+                    Character · Action
+                </div>
 
-<source
-src="shot06.mp4"
-type="video/mp4">
+            </div>
 
-</video>
+        </div>
 
-<div class="work-info">
 
-<div class="work-title">
-Aang Animation
-</div>
+        <!-- SHOT 07 -->
 
-<div class="work-credit">
-Character · Action
-</div>
+        <div class="work-card">
 
-</div>
+            <video
+            muted
+            loop
+            playsinline
+            controls
+            controlsList="nodownload">
 
-</div>
+                <source
+                src="shot07.mp4"
+                type="video/mp4">
 
+            </video>
 
+            <div class="work-info">
 
-<!-- SHOT 07 -->
+                <div class="work-title">
+                    Character Animation
+                </div>
 
-<div class="work-card">
+                <div class="work-credit">
+                    Selected Work
+                </div>
 
-<video
-muted
-loop
-playsinline
-controls
-controlsList="nodownload">
+            </div>
 
-<source
-src="shot07.mp4"
-type="video/mp4">
+        </div>
 
-</video>
 
-<div class="work-info">
-
-<div class="work-title">
-Character Animation
-</div>
-
-<div class="work-credit">
-Selected Work
-</div>
-
-</div>
-
-</div>
-
-
-</div>
+    </div>
 
 </section>
 
 
-
-<!-- =====================================================
-     PROFESSIONAL CREDITS
-===================================================== -->
+<!-- =========================
+     PRODUCTION CREDITS
+========================= -->
 
 <section
 id="credits"
 class="reveal">
 
-<p class="section-label">
-03 — PROFESSIONAL WORK
-</p>
+    <p class="section-label">
+        03 — PRODUCTION CREDITS
+    </p>
 
-<h2 class="section-title">
-Production Credits
-</h2>
+    <h2 class="section-title">
+        Selected Productions
+    </h2>
 
-<p class="section-description">
+    <p class="section-description">
 
-Selected professional animation work.
-Studio footage is available through
-password-protected viewing links.
+        A selection of animated productions
+        I've had the opportunity to work on.
 
-</p>
-
-
-<div class="production-grid">
+    </p>
 
 
-<!-- LEGO STAR WARS -->
-
-<div class="production-card">
-
-<div class="production-number">
-01
-</div>
-
-<h3>
-LEGO Star Wars:
-<br>
-Rebuild the Galaxy —
-Pieces of the Past
-</h3>
-
-<p>
-3D Character Animation
-</p>
-
-<div class="locked-tag">
-🔒 PROTECTED WORK
-</div>
-
-</div>
+    <div class="production-grid">
 
 
+        <div class="production-card">
 
-<!-- LEGO STAR WARS MANDALORIAN -->
+            <div class="production-number">
+                01
+            </div>
 
-<div class="production-card">
+            <h3>
+                LEGO Star Wars:
+                <br>
+                Rebuild the Galaxy —
+                Pieces of the Past
+            </h3>
 
-<div class="production-number">
-02
-</div>
+            <p>
+                3D Character Animation
+            </p>
 
-<h3>
-LEGO Star Wars:
-<br>
-The Mandalorian
-</h3>
-
-<p>
-3D Character Animation
-</p>
-
-<div class="locked-tag">
-🔒 PROTECTED WORK
-</div>
-
-</div>
+        </div>
 
 
+        <div class="production-card">
 
-<!-- BARBIE -->
+            <div class="production-number">
+                02
+            </div>
 
-<div class="production-card">
+            <h3>
+                LEGO Star Wars:
+                <br>
+                The Mandalorian
+            </h3>
 
-<div class="production-number">
-03
-</div>
+            <p>
+                3D Character Animation
+            </p>
 
-<h3>
-Barbie
-</h3>
-
-<p>
-Selected Netflix Productions
-</p>
-
-<div class="locked-tag">
-🔒 PROTECTED WORK
-</div>
-
-</div>
+        </div>
 
 
+        <div class="production-card">
 
-<!-- MORE -->
+            <div class="production-number">
+                03
+            </div>
 
-<div class="production-card">
+            <h3>
+                LEGO Marvel:
+                <br>
+                Strange Tails
+            </h3>
 
-<div class="production-number">
-04
-</div>
+            <p>
+                3D Character Animation
+            </p>
 
-<h3>
-Additional Production Work
-</h3>
-
-<p>
-Selected professional character animation
-and performance work.
-</p>
-
-<div class="locked-tag">
-🔒 PROTECTED WORK
-</div>
-
-</div>
+        </div>
 
 
-</div>
+        <div class="production-card">
+
+            <div class="production-number">
+                04
+            </div>
+
+            <h3>
+                Barbie Mermaid Power
+            </h3>
+
+            <p>
+                3D Character Animation
+            </p>
+
+        </div>
+
+
+        <div class="production-card">
+
+            <div class="production-number">
+                05
+            </div>
+
+            <h3>
+                Barbie:
+                <br>
+                Skipper and the Big Babysitting Adventure
+            </h3>
+
+            <p>
+                3D Character Animation
+            </p>
+
+        </div>
+
+
+        <div class="production-card">
+
+            <div class="production-number">
+                06
+            </div>
+
+            <h3>
+                Barbie:
+                <br>
+                Epic Road Trip
+            </h3>
+
+            <p>
+                3D Character Animation
+            </p>
+
+        </div>
+
+
+    </div>
 
 </section>
 
 
-
-<!-- =====================================================
+<!-- =========================
      ABOUT
-===================================================== -->
+========================= -->
 
 <section
 id="about"
 class="reveal">
 
-<p class="section-label">
-04 — ABOUT
-</p>
+    <p class="section-label">
+        04 — ABOUT
+    </p>
 
-<h2 class="section-title">
-About Me
-</h2>
+    <h2 class="section-title">
+        About Me
+    </h2>
 
+    <div class="about">
 
-<div class="about">
+        <p>
 
-<p>
+            I'm a 3D character animator focused on
+            creating expressive performances,
+            dynamic action and believable character movement.
 
-I'm a 3D character animator focused on
-creating expressive performances,
-dynamic action and believable character movement.
+        </p>
 
-</p>
+        <br>
 
-<br>
+        <p>
 
-<p>
+            My experience includes animation for television
+            and streaming productions, with a strong interest
+            in character acting, action animation,
+            body mechanics, timing and visual storytelling.
 
-My experience includes animation for television
-and streaming productions, with a strong interest
-in character acting, action animation,
-body mechanics, timing and visual storytelling.
+        </p>
 
-</p>
-
-</div>
+    </div>
 
 </section>
 
 
-
-<!-- =====================================================
+<!-- =========================
      CONTACT
-===================================================== -->
+========================= -->
 
 <section
 id="contact"
 class="contact reveal">
 
-<p class="section-label">
-05 — CONTACT
-</p>
+    <p class="section-label">
+        05 — CONTACT
+    </p>
 
-<h2 class="section-title">
-Let's Create Something.
-</h2>
+    <h2 class="section-title">
+        Let's Create Something.
+    </h2>
 
-<p class="contact-text">
+    <p class="contact-text">
 
-For animation opportunities,
-freelance work or just to get in touch.
+        For animation opportunities,
+        freelance work or just to get in touch.
 
-</p>
+    </p>
 
+    <div class="contact-buttons">
 
-<div class="contact-buttons">
+        <a
+        href="mailto:Justinbreva2@gmail.com"
+        class="contact-button">
 
-<a
-href="mailto:Justinbreva2@gmail.com"
-class="contact-button">
+            Email Me
 
-Email Me
+        </a>
 
-</a>
+        <a
+        href="https://www.linkedin.com/in/justin-breva-064411197/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="contact-button">
 
+            LinkedIn
 
-<a
-href="https://www.linkedin.com/in/justin-breva-064411197/"
-target="_blank"
-rel="noopener noreferrer"
-class="contact-button">
+        </a>
 
-LinkedIn
-
-</a>
-
-</div>
+    </div>
 
 </section>
 
 
-
-<!-- =====================================================
+<!-- =========================
      FOOTER
-===================================================== -->
+========================= -->
 
 <footer>
 
-© 2026 Justin Breva · 3D Character Animator · All Rights Reserved
+    © 2026 Justin Breva ·
+    3D Character Animator ·
+    All Rights Reserved
 
 </footer>
 
 
-
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
-
 <script>
 
-
-/* =====================================================
-   FRAME BY FRAME CONTROLS
-===================================================== */
+/* =========================
+   FRAME BY FRAME
+========================= */
 
 const mainReel =
     document.getElementById("mainReel");
-
-
-// Animation is commonly viewed at 24 FPS.
-// Change this number if your reel uses another FPS.
 
 const REEL_FPS = 24;
 
@@ -1707,11 +1620,13 @@ function nextFrame() {
 
     mainReel.pause();
 
+    const frameDuration =
+        1 / REEL_FPS;
+
     mainReel.currentTime =
         Math.min(
             mainReel.duration || Infinity,
-            mainReel.currentTime +
-            (1 / REEL_FPS)
+            mainReel.currentTime + frameDuration
         );
 
 }
@@ -1723,23 +1638,24 @@ function previousFrame() {
 
     mainReel.pause();
 
+    const frameDuration =
+        1 / REEL_FPS;
+
     mainReel.currentTime =
         Math.max(
             0,
-            mainReel.currentTime -
-            (1 / REEL_FPS)
+            mainReel.currentTime - frameDuration
         );
 
 }
 
 
-/* =====================================================
-   KEYBOARD FRAME CONTROLS
+/* KEYBOARD FRAME CONTROL
 
-   , = previous frame
-   . = next frame
+   ,  = previous
+   .  = next
 
-===================================================== */
+*/
 
 document.addEventListener(
     "keydown",
@@ -1754,9 +1670,7 @@ document.addEventListener(
                 document.activeElement.tagName === "TEXTAREA"
             )
         ) {
-
             return;
-
         }
 
 
@@ -1777,9 +1691,9 @@ document.addEventListener(
 );
 
 
-/* =====================================================
-   SCROLL REVEAL
-===================================================== */
+/* =========================
+   SCROLL ANIMATION
+========================= */
 
 const revealElements =
     document.querySelectorAll(".reveal");
@@ -1807,7 +1721,7 @@ const revealObserver =
         },
 
         {
-            threshold: 0.12
+            threshold: 0.10
         }
 
     );
@@ -1822,12 +1736,9 @@ revealElements.forEach(
 );
 
 
-/* =====================================================
+/* =========================
    VIDEO HOVER PREVIEW
-
-   Videos begin playing when the mouse enters
-   the rounded card and pause when it leaves.
-===================================================== */
+========================= */
 
 const workCards =
     document.querySelectorAll(".work-card");
@@ -1844,16 +1755,13 @@ workCards.forEach(
             "mouseenter",
             function() {
 
-                if (video) {
+                if (!video) return;
 
-                    video.play()
-                        .catch(
-                            function() {
-                                // Browser autoplay restriction.
-                            }
-                        );
-
-                }
+                video.play()
+                    .catch(
+                        function() {
+                        }
+                    );
 
             }
         );
@@ -1863,11 +1771,9 @@ workCards.forEach(
             "mouseleave",
             function() {
 
-                if (video) {
+                if (!video) return;
 
-                    video.pause();
-
-                }
+                video.pause();
 
             }
         );
@@ -1875,10 +1781,8 @@ workCards.forEach(
     }
 );
 
-
 </script>
 
 
 </body>
-
 </html>
