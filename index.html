@@ -15,7 +15,6 @@
 <style>
 
 :root {
-
     --plum-deep: #1f1428;
     --plum: #3a2145;
     --plum-mid: #56305f;
@@ -34,7 +33,6 @@
     --text-dark: #24182b;
     --muted-light: rgba(249,233,221,0.67);
     --muted-dark: #776675;
-
 }
 
 
@@ -86,7 +84,6 @@ button {
         );
 
     background-size: 24px 24px;
-
     opacity: 0.08;
 }
 
@@ -103,7 +100,6 @@ button {
         );
 
     background-size: 24px 24px;
-
     opacity: 0.08;
 }
 
@@ -141,7 +137,6 @@ nav {
     transform: translateX(-50%);
 
     width: calc(100% - 40px);
-
     max-width: 1480px;
 
     min-height: 66px;
@@ -474,7 +469,6 @@ header {
     z-index: 5;
 
     width: 100%;
-
     max-width: 1480px;
 
     margin: auto;
@@ -885,43 +879,32 @@ header {
 
 .project-card:nth-child(2) {
     margin-top: 70px;
-
     transform: rotate(1deg);
 }
 
 .project-card:nth-child(3) {
     width: 92%;
-
     margin-left: 6%;
-
     transform: rotate(0.6deg);
 }
 
 .project-card:nth-child(4) {
     width: 104%;
-
     margin-left: -4%;
-
     margin-top: 52px;
-
     transform: rotate(-1deg);
 }
 
 .project-card:nth-child(5) {
     width: 96%;
-
     margin-top: 20px;
-
     transform: rotate(1.2deg);
 }
 
 .project-card:nth-child(6) {
     width: 90%;
-
     margin-left: 7%;
-
     margin-top: -22px;
-
     transform: rotate(-0.6deg);
 }
 
@@ -1003,7 +986,7 @@ header {
 
 
 /* =========================================================
-   PRODUCTION CREDITS
+   WORKED ON
 ========================================================= */
 
 .credits-section {
@@ -1053,13 +1036,6 @@ header {
     margin-bottom: 75px;
 }
 
-.credits-header
-.section-intro {
-    margin-left: 12%;
-
-    color: var(--muted-light);
-}
-
 .production-grid {
     display: grid;
 
@@ -1074,7 +1050,7 @@ header {
 
 
 /* =========================================================
-   CREDIT CARDS
+   WORKED ON CARDS
 ========================================================= */
 
 .production-card {
@@ -1082,13 +1058,14 @@ header {
 
     min-height: 275px;
 
-    padding: 28px;
+    padding: 30px;
 
     display: flex;
 
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-    justify-content: space-between;
+    text-align: center;
 
     border-radius: 21px;
 
@@ -1124,31 +1101,26 @@ header {
 
 .production-card:nth-child(2) {
     margin-top: 45px;
-
     transform: rotate(0.8deg);
 }
 
 .production-card:nth-child(3) {
     margin-top: 8px;
-
     transform: rotate(-0.5deg);
 }
 
 .production-card:nth-child(4) {
     margin-top: -15px;
-
     transform: rotate(1deg);
 }
 
 .production-card:nth-child(5) {
     margin-top: 32px;
-
     transform: rotate(-1deg);
 }
 
 .production-card:nth-child(6) {
     margin-top: -3px;
-
     transform: rotate(1deg);
 }
 
@@ -1169,56 +1141,23 @@ header {
         rgba(233,111,155,0.40);
 }
 
-.production-number {
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    width: 44px;
-    height: 44px;
-
-    border-radius: 9px;
-
-    background: var(--pink);
-
-    color: var(--plum-deep);
-
-    font-size: 13px;
-    font-weight: 800;
-
-    box-shadow:
-        4px 4px 0
-        var(--lavender);
-}
-
 .production-card h3 {
-    max-width: 350px;
+    max-width: 380px;
 
     font-size:
         clamp(
-            22px,
-            2vw,
-            31px
+            30px,
+            3vw,
+            48px
         );
 
-    line-height: 1.06;
+    line-height: 1;
 
-    letter-spacing: -1px;
+    letter-spacing: -2px;
 
     font-weight: 800;
 
     color: var(--cream);
-}
-
-.production-role {
-    margin-top: 12px;
-
-    color:
-        rgba(249,233,221,0.55);
-
-    font-size: 14px;
-    font-weight: 600;
 }
 
 
@@ -1252,7 +1191,6 @@ header {
     z-index: 5;
 
     width: 100%;
-
     max-width: 1480px;
 
     margin: auto;
@@ -1432,7 +1370,6 @@ footer {
 
     .credits-header {
         width: 75%;
-
         margin-left: 20%;
     }
 
@@ -1451,7 +1388,6 @@ footer {
     .contact-right {
         transform: none;
     }
-
 }
 
 
@@ -1519,7 +1455,6 @@ footer {
 
     .reel-section {
         clip-path: none;
-
         margin: 0;
     }
 
@@ -1527,15 +1462,12 @@ footer {
     .projects-header,
     .credits-header {
         width: 100%;
-
         margin-left: 0;
     }
 
     .reel-section
     .section-intro,
     .projects-header
-    .section-intro,
-    .credits-header
     .section-intro {
         margin-left: 0;
     }
@@ -1610,10 +1542,8 @@ footer {
 
     footer {
         flex-direction: column;
-
         text-align: center;
     }
-
 }
 
 
@@ -1637,7 +1567,6 @@ footer {
     .section-title {
         letter-spacing: -3px;
     }
-
 }
 
 
@@ -1699,7 +1628,7 @@ footer {
 
         <li>
             <a href="#credits">
-                Credits
+                Worked On
             </a>
         </li>
 
@@ -1800,7 +1729,7 @@ class="reel-section">
         <div class="reel-heading">
 
             <div class="eyebrow">
-                01 — DEMO REEL
+                DEMO REEL
             </div>
 
             <h2 class="section-title">
@@ -1883,7 +1812,7 @@ class="projects-section">
         <div class="projects-header">
 
             <div class="eyebrow">
-                02 — PERSONAL PROJECTS
+                PERSONAL PROJECTS
             </div>
 
             <h2 class="section-title">
@@ -1903,8 +1832,6 @@ class="projects-section">
 
         <div class="projects-grid">
 
-
-            <!-- PROJECT 01 -->
 
             <article class="project-card">
 
@@ -1941,8 +1868,6 @@ class="projects-section">
 
 
 
-            <!-- PROJECT 02 -->
-
             <article class="project-card">
 
                 <div class="project-media">
@@ -1977,8 +1902,6 @@ class="projects-section">
             </article>
 
 
-
-            <!-- PROJECT 03 -->
 
             <article class="project-card">
 
@@ -2015,8 +1938,6 @@ class="projects-section">
 
 
 
-            <!-- PROJECT 04 -->
-
             <article class="project-card">
 
                 <div class="project-media">
@@ -2052,8 +1973,6 @@ class="projects-section">
 
 
 
-            <!-- PROJECT 05 -->
-
             <article class="project-card">
 
                 <div class="project-media">
@@ -2088,8 +2007,6 @@ class="projects-section">
             </article>
 
 
-
-            <!-- PROJECT 06 -->
 
             <article class="project-card">
 
@@ -2134,7 +2051,7 @@ class="projects-section">
 
 
 <!-- ======================================================
-     PRODUCTION CREDITS
+     WORKED ON
 ======================================================= -->
 
 <section
@@ -2149,20 +2066,12 @@ class="credits-section">
         <div class="credits-header">
 
             <div class="eyebrow">
-                03 — PRODUCTION CREDITS
+                WORKED ON
             </div>
 
             <h2 class="section-title">
-                Production
-                Credits
+                Worked On
             </h2>
-
-            <p class="section-intro">
-
-                Selected productions I've worked on
-                as a 3D character animator.
-
-            </p>
 
         </div>
 
@@ -2172,23 +2081,11 @@ class="credits-section">
 
             <div class="production-card">
 
-                <div class="production-number">
-                    01
-                </div>
-
-                <div>
-
-                    <h3>
-                        LEGO Star Wars:
-                        Rebuild the Galaxy —
-                        Pieces of the Past
-                    </h3>
-
-                    <div class="production-role">
-                        3D Character Animation
-                    </div>
-
-                </div>
+                <h3>
+                    LEGO Star Wars:
+                    Rebuild the Galaxy —
+                    Pieces of the Past
+                </h3>
 
             </div>
 
@@ -2196,22 +2093,10 @@ class="credits-section">
 
             <div class="production-card">
 
-                <div class="production-number">
-                    02
-                </div>
-
-                <div>
-
-                    <h3>
-                        LEGO Star Wars:
-                        The Mandalorian
-                    </h3>
-
-                    <div class="production-role">
-                        3D Character Animation
-                    </div>
-
-                </div>
+                <h3>
+                    LEGO Star Wars:
+                    The Mandalorian
+                </h3>
 
             </div>
 
@@ -2219,22 +2104,10 @@ class="credits-section">
 
             <div class="production-card">
 
-                <div class="production-number">
-                    03
-                </div>
-
-                <div>
-
-                    <h3>
-                        LEGO Marvel:
-                        Strange Tails
-                    </h3>
-
-                    <div class="production-role">
-                        3D Character Animation
-                    </div>
-
-                </div>
+                <h3>
+                    LEGO Marvel:
+                    Strange Tails
+                </h3>
 
             </div>
 
@@ -2242,21 +2115,9 @@ class="credits-section">
 
             <div class="production-card">
 
-                <div class="production-number">
-                    04
-                </div>
-
-                <div>
-
-                    <h3>
-                        Barbie Mermaid Power
-                    </h3>
-
-                    <div class="production-role">
-                        3D Character Animation
-                    </div>
-
-                </div>
+                <h3>
+                    Barbie Mermaid Power
+                </h3>
 
             </div>
 
@@ -2264,23 +2125,11 @@ class="credits-section">
 
             <div class="production-card">
 
-                <div class="production-number">
-                    05
-                </div>
-
-                <div>
-
-                    <h3>
-                        Barbie:
-                        Skipper and the Big
-                        Babysitting Adventure
-                    </h3>
-
-                    <div class="production-role">
-                        3D Character Animation
-                    </div>
-
-                </div>
+                <h3>
+                    Barbie:
+                    Skipper and the Big
+                    Babysitting Adventure
+                </h3>
 
             </div>
 
@@ -2288,22 +2137,10 @@ class="credits-section">
 
             <div class="production-card">
 
-                <div class="production-number">
-                    06
-                </div>
-
-                <div>
-
-                    <h3>
-                        Barbie:
-                        Epic Road Trip
-                    </h3>
-
-                    <div class="production-role">
-                        3D Character Animation
-                    </div>
-
-                </div>
+                <h3>
+                    Barbie:
+                    Epic Road Trip
+                </h3>
 
             </div>
 
@@ -2334,7 +2171,7 @@ class="contact-section">
             <div class="contact-left">
 
                 <div class="eyebrow">
-                    04 — CONTACT
+                    CONTACT
                 </div>
 
                 <h2 class="contact-title">
@@ -2473,10 +2310,6 @@ document.addEventListener(
 
 /* =========================================================
    PERSONAL PROJECT VIDEO BEHAVIOUR
-
-   - NO AUTOPLAY
-   - ONLY ONE PROJECT PLAYS AT A TIME
-   - MAIN REEL PAUSES IF A PROJECT STARTS
 ========================================================= */
 
 const projectVideos =
