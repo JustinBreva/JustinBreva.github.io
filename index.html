@@ -127,22 +127,6 @@ button {
     opacity: 0.15;
 }
 
-.shape-pink {
-    background: var(--pink);
-}
-
-.shape-lavender {
-    background: var(--lavender);
-}
-
-.shape-cream {
-    background: var(--cream);
-}
-
-.shape-plum {
-    background: var(--plum-mid);
-}
-
 
 /* =========================================================
    NAV
@@ -156,15 +140,13 @@ nav {
 
     transform: translateX(-50%);
 
-    width:
-        calc(100% - 40px);
+    width: calc(100% - 40px);
 
     max-width: 1480px;
 
     min-height: 66px;
 
-    padding:
-        9px 14px 9px 10px;
+    padding: 9px 14px 9px 10px;
 
     display: flex;
     align-items: center;
@@ -172,15 +154,12 @@ nav {
 
     border-radius: 22px;
 
-    background:
-        rgba(28,17,36,0.88);
+    background: rgba(28,17,36,0.88);
 
     backdrop-filter: blur(22px);
     -webkit-backdrop-filter: blur(22px);
 
-    border:
-        1px solid
-        rgba(255,255,255,0.10);
+    border: 1px solid rgba(255,255,255,0.10);
 
     box-shadow:
         0 18px 50px
@@ -249,8 +228,7 @@ nav {
 .nav-links a {
     display: block;
 
-    padding:
-        9px 14px;
+    padding: 9px 14px;
 
     border-radius: 11px;
 
@@ -272,8 +250,7 @@ nav {
 
     color: var(--plum-deep);
 
-    transform:
-        translateY(-2px);
+    transform: translateY(-2px);
 }
 
 
@@ -298,8 +275,7 @@ header {
 
     margin: auto;
 
-    padding:
-        130px 5%;
+    padding: 130px 5%;
 }
 
 .eyebrow {
@@ -307,8 +283,7 @@ header {
 
     margin-bottom: 18px;
 
-    padding:
-        7px 13px;
+    padding: 7px 13px;
 
     border-radius: 8px;
 
@@ -366,14 +341,11 @@ header {
 
     gap: 9px;
 
-    padding:
-        14px 24px;
+    padding: 14px 24px;
 
     border-radius: 12px;
 
-    border:
-        2px solid
-        var(--cream);
+    border: 2px solid var(--cream);
 
     text-decoration: none;
 
@@ -435,8 +407,7 @@ header {
     display: flex;
     align-items: center;
 
-    padding:
-        150px 5% 100px;
+    padding: 150px 5% 100px;
 
     background:
         radial-gradient(
@@ -515,8 +486,7 @@ header {
     margin-left: 2%;
     margin-bottom: 20px;
 
-    padding:
-        8px 14px;
+    padding: 8px 14px;
 
     border-radius: 9px;
 
@@ -732,8 +702,7 @@ header {
 @keyframes reelBounce {
 
     0% {
-        transform:
-            rotate(0.5deg);
+        transform: rotate(0.5deg);
     }
 
     40% {
@@ -749,8 +718,7 @@ header {
     }
 
     100% {
-        transform:
-            rotate(0.5deg);
+        transform: rotate(0.5deg);
     }
 }
 
@@ -775,8 +743,7 @@ header {
 }
 
 .frame-button {
-    padding:
-        10px 18px;
+    padding: 10px 18px;
 
     border:
         2px solid
@@ -976,83 +943,36 @@ header {
 
 
 /* =========================================================
-   PROJECT MEDIA
+   PROJECT VIDEOS
 ========================================================= */
 
 .project-media {
     position: relative;
 
-    aspect-ratio:
-        16 / 9;
+    aspect-ratio: 16 / 9;
 
     overflow: hidden;
 
     border-radius: 16px;
 
-    background:
-        linear-gradient(
-            135deg,
-            var(--pink),
-            var(--rose)
-        );
+    background: #120b17;
 }
 
-.project-card:nth-child(2)
-.project-media,
-.project-card:nth-child(5)
-.project-media {
-    background:
-        linear-gradient(
-            135deg,
-            var(--lavender),
-            var(--plum-mid)
-        );
-}
+.project-video {
+    display: block;
 
-.project-card:nth-child(3)
-.project-media,
-.project-card:nth-child(6)
-.project-media {
-    background:
-        linear-gradient(
-            135deg,
-            var(--plum-mid),
-            var(--pink)
-        );
-}
+    width: 100%;
+    height: 100%;
 
-.project-number {
-    position: absolute;
+    aspect-ratio: 16 / 9;
 
-    inset: 0;
+    object-fit: contain;
 
-    display: flex;
+    background: #0b070d;
 
-    align-items: center;
+    border: 0;
 
-    justify-content: center;
-
-    font-size:
-        clamp(
-            75px,
-            9vw,
-            140px
-        );
-
-    font-weight: 800;
-
-    color:
-        rgba(249,233,221,0.33);
-
-    transition:
-        transform 0.35s ease;
-}
-
-.project-card:hover
-.project-number {
-    transform:
-        rotate(-3deg)
-        scale(1.08);
+    border-radius: 16px;
 }
 
 .project-info {
@@ -1337,8 +1257,7 @@ header {
 
     margin: auto;
 
-    padding:
-        135px 5%;
+    padding: 135px 5%;
 }
 
 .contact-layout {
@@ -1445,8 +1364,7 @@ header {
 ========================================================= */
 
 footer {
-    padding:
-        30px 5%;
+    padding: 30px 5%;
 
     display: flex;
 
@@ -1471,8 +1389,7 @@ footer {
 .reveal {
     opacity: 0;
 
-    transform:
-        translateY(45px);
+    transform: translateY(45px);
 
     transition:
         opacity 0.8s ease,
@@ -1483,8 +1400,7 @@ footer {
 .reveal.visible {
     opacity: 1;
 
-    transform:
-        translateY(0);
+    transform: translateY(0);
 }
 
 
@@ -1645,8 +1561,7 @@ footer {
     }
 
     .projects-grid {
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
     }
 
     .project-card,
@@ -1666,8 +1581,7 @@ footer {
     }
 
     .production-grid {
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
     }
 
     .production-card,
@@ -1809,17 +1723,9 @@ footer {
 
     <div class="dot-pattern"></div>
 
-    <div
-    class="shape round-block hero-block-one">
-    </div>
-
-    <div
-    class="shape round-block hero-block-two">
-    </div>
-
-    <div
-    class="shape round-block hero-block-three">
-    </div>
+    <div class="shape round-block hero-block-one"></div>
+    <div class="shape round-block hero-block-two"></div>
+    <div class="shape round-block hero-block-three"></div>
 
 
     <div class="hero-inner">
@@ -1886,9 +1792,7 @@ class="reel-section">
 
     <div class="dot-pattern"></div>
 
-    <div
-    class="shape round-block reel-block">
-    </div>
+    <div class="shape round-block reel-block"></div>
 
 
     <div class="section-inner reveal content-layer">
@@ -1921,7 +1825,8 @@ class="reel-section">
             id="mainReel"
             controls
             controlsList="nodownload"
-            playsinline>
+            playsinline
+            preload="metadata">
 
                 <source
                 src="reel.mp4"
@@ -1999,13 +1904,98 @@ class="projects-section">
         <div class="projects-grid">
 
 
+            <!-- PROJECT 01 -->
+
             <article class="project-card">
 
                 <div class="project-media">
 
-                    <div class="project-number">
-                        01
+                    <video
+                    class="project-video"
+                    controls
+                    controlsList="nodownload"
+                    playsinline
+                    preload="metadata">
+
+                        <source
+                        src="project01.mp4"
+                        type="video/mp4">
+
+                    </video>
+
+                </div>
+
+                <div class="project-info">
+
+                    <div class="project-title">
+                        Basketball Animation
                     </div>
+
+                    <div class="project-type">
+                        Action · Body Mechanics
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PROJECT 02 -->
+
+            <article class="project-card">
+
+                <div class="project-media">
+
+                    <video
+                    class="project-video"
+                    controls
+                    controlsList="nodownload"
+                    playsinline
+                    preload="metadata">
+
+                        <source
+                        src="project02.mp4"
+                        type="video/mp4">
+
+                    </video>
+
+                </div>
+
+                <div class="project-info">
+
+                    <div class="project-title">
+                        Character Action
+                    </div>
+
+                    <div class="project-type">
+                        Action · Personal Animation
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PROJECT 03 -->
+
+            <article class="project-card">
+
+                <div class="project-media">
+
+                    <video
+                    class="project-video"
+                    controls
+                    controlsList="nodownload"
+                    playsinline
+                    preload="metadata">
+
+                        <source
+                        src="project03.mp4"
+                        type="video/mp4">
+
+                    </video>
 
                 </div>
 
@@ -2025,13 +2015,61 @@ class="projects-section">
 
 
 
+            <!-- PROJECT 04 -->
+
             <article class="project-card">
 
                 <div class="project-media">
 
-                    <div class="project-number">
-                        02
+                    <video
+                    class="project-video"
+                    controls
+                    controlsList="nodownload"
+                    playsinline
+                    preload="metadata">
+
+                        <source
+                        src="project04.mp4"
+                        type="video/mp4">
+
+                    </video>
+
+                </div>
+
+                <div class="project-info">
+
+                    <div class="project-title">
+                        Basketball Animation
                     </div>
+
+                    <div class="project-type">
+                        Action · Body Mechanics
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PROJECT 05 -->
+
+            <article class="project-card">
+
+                <div class="project-media">
+
+                    <video
+                    class="project-video"
+                    controls
+                    controlsList="nodownload"
+                    playsinline
+                    preload="metadata">
+
+                        <source
+                        src="project05.mp4"
+                        type="video/mp4">
+
+                    </video>
 
                 </div>
 
@@ -2042,7 +2080,7 @@ class="projects-section">
                     </div>
 
                     <div class="project-type">
-                        Acting · Personal Animation
+                        Acting · Performance
                     </div>
 
                 </div>
@@ -2051,65 +2089,24 @@ class="projects-section">
 
 
 
-            <article class="project-card">
-
-                <div class="project-media">
-
-                    <div class="project-number">
-                        03
-                    </div>
-
-                </div>
-
-                <div class="project-info">
-
-                    <div class="project-title">
-                        Basketball Animation
-                    </div>
-
-                    <div class="project-type">
-                        Action · Body Mechanics
-                    </div>
-
-                </div>
-
-            </article>
-
-
+            <!-- PROJECT 06 -->
 
             <article class="project-card">
 
                 <div class="project-media">
 
-                    <div class="project-number">
-                        04
-                    </div>
+                    <video
+                    class="project-video"
+                    controls
+                    controlsList="nodownload"
+                    playsinline
+                    preload="metadata">
 
-                </div>
+                        <source
+                        src="project06.mp4"
+                        type="video/mp4">
 
-                <div class="project-info">
-
-                    <div class="project-title">
-                        Basketball Animation
-                    </div>
-
-                    <div class="project-type">
-                        Action · Body Mechanics
-                    </div>
-
-                </div>
-
-            </article>
-
-
-
-            <article class="project-card">
-
-                <div class="project-media">
-
-                    <div class="project-number">
-                        05
-                    </div>
+                    </video>
 
                 </div>
 
@@ -2121,32 +2118,6 @@ class="projects-section">
 
                     <div class="project-type">
                         Action Animation
-                    </div>
-
-                </div>
-
-            </article>
-
-
-
-            <article class="project-card">
-
-                <div class="project-media">
-
-                    <div class="project-number">
-                        06
-                    </div>
-
-                </div>
-
-                <div class="project-info">
-
-                    <div class="project-title">
-                        Character Animation
-                    </div>
-
-                    <div class="project-type">
-                        Personal Project
                     </div>
 
                 </div>
@@ -2440,7 +2411,7 @@ class="contact-section">
 
 
 /* =========================================================
-   FRAME CONTROLS
+   MAIN REEL FRAME CONTROLS
 ========================================================= */
 
 const mainReel =
@@ -2497,6 +2468,73 @@ document.addEventListener(
 
     }
 );
+
+
+
+/* =========================================================
+   PERSONAL PROJECT VIDEO BEHAVIOUR
+
+   - NO AUTOPLAY
+   - ONLY ONE PROJECT PLAYS AT A TIME
+   - MAIN REEL PAUSES IF A PROJECT STARTS
+========================================================= */
+
+const projectVideos =
+    document.querySelectorAll(
+        ".project-video"
+    );
+
+
+projectVideos.forEach(
+    function(video) {
+
+        video.autoplay = false;
+
+        video.addEventListener(
+            "play",
+            function() {
+
+                projectVideos.forEach(
+                    function(otherVideo) {
+
+                        if (
+                            otherVideo !== video
+                        ) {
+                            otherVideo.pause();
+                        }
+
+                    }
+                );
+
+                if (mainReel) {
+                    mainReel.pause();
+                }
+
+            }
+        );
+
+    }
+);
+
+
+if (mainReel) {
+
+    mainReel.addEventListener(
+        "play",
+        function() {
+
+            projectVideos.forEach(
+                function(video) {
+
+                    video.pause();
+
+                }
+            );
+
+        }
+    );
+
+}
 
 
 
